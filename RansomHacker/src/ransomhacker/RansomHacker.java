@@ -10,6 +10,7 @@ import byui.cit260.ransomhacker.model.Character;
 import byui.cit260.ransomhacker.model.Game;
 import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.model.Skills;
+import byui.cit260.ransomhacker.model.Scene;
   
 
 
@@ -35,6 +36,13 @@ public class RansomHacker {
      item1.setQuantity(1);
      item1.setValue(3);
      System.out.println(item1.toString());
+     
+     Scene scene1 = new Scene();
+     scene1.setDisplaySymbol("SLC");
+     scene1.setName("Salt Lake City");
+     scene1.setTravelTime(30);
+     
+     
      
      Character character1 = new Character();
      character1.setCoordinateX(1);
