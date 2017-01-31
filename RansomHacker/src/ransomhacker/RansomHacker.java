@@ -109,7 +109,7 @@ public class RansomHacker {
      SkillDevelopment skilldevelopment1 = new SkillDevelopment();
      skilldevelopment1.setName("Self-Study");
      skilldevelopment1.setMoneyCost(100);
-     skilldevelopment1.setState(Idaho);
+     skilldevelopment1.setState("Idaho");
      skilldevelopment1.setTimeCost(1);
      skilldevelopment1.setValue(1);
      skilldevelopment1.setDescription("Study Hacking Strategies in a day long Personal Study");
