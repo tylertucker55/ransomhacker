@@ -12,17 +12,17 @@ import java.util.Objects;
  *
  * @author muhile
  */
-public class SkillDevelopent implements Serializable {
+public class SkillDevelopment implements Serializable {
 
     
     private String name;
     private String description;
-	private double moneyCost;
-	private double timeCost;
-	private double value;
-	private String state;
+    private double moneyCost;
+    private double timeCost;
+    private double value;
+    private String state;
     
-    public SkillDevelopent() {
+    public SkillDevelopment() {
     }
 
     public String getName() {
@@ -96,7 +96,7 @@ public class SkillDevelopent implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final SkillDevelopent other = (SkillDevelopent) obj;
+        final SkillDevelopment other = (SkillDevelopment) obj;
         if (Double.doubleToLongBits(this.moneyCost) != Double.doubleToLongBits(other.moneyCost)) {
             return false;
         }

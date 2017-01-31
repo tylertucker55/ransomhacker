@@ -16,7 +16,7 @@ public class Scene implements Serializable {
     
     private String name;
     private String displaySymbol;
-	private double travelTime;
+    private double travelTime;
 	
     
     public Scene() {
