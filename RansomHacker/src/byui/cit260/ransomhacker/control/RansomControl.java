@@ -11,7 +11,7 @@ package byui.cit260.ransomhacker.control;
  */
 public class RansomControl {
     
-    public double addDays(double money, double amountPaid, int daysLeft) {
+    public double addDays( double amountPaid, int daysLeft) {
     
     
 
