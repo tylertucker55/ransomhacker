@@ -58,3 +58,26 @@ public class StartProgramView {
     }
     
 }
+    
+    private String getName() {
+     
+        Scanner keyboard = new Scanner(System.in);
+        String value = "";
+        boolean valid = false;
+
+        while (!valid) {
+            System.out.println"\n" + this.promptMessage);
+
+            value = keyboard.nextLine();
+            value = value.trim();
+
+            if (value.length() < 1) {
+                System.out.println("\nInvalid value: value cannot be blank");
+                continue;
+            }
+
+            break;
+        }
+
+        return value;
+}
