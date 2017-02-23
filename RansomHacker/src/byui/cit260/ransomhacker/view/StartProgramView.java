@@ -54,7 +54,18 @@ public class StartProgramView {
     }
 
     public void displayStartProgramView() {
-       System.out.println("\n*** displayStartProgram() function called ***");
+       boolean done = false;
+       do {
+           // this function prompts for and get players name
+           String Name = this.getName();
+           if (Name.toUpperCase().equals("Q")) // user wants to quit
+               return; //exit the game
+           
+           //do the requested action and display the next view
+           done = this.doAction(Name);
+           
+       } while (!done);
+       
     }
     
 }
