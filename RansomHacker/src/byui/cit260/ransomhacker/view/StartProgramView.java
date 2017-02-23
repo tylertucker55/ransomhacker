@@ -5,6 +5,10 @@
  */
 package byui.cit260.ransomhacker.view;
 
+import byui.cit260.ransomhacker.control.GameControl;
+import byui.cit260.ransomhacker.model.Player;
+import java.util.Scanner;
+
 /**
  *
  * @author Hansen
@@ -57,18 +61,16 @@ public class StartProgramView {
        boolean done = false;
        do {
            // this function prompts for and get players name
-           String Name = this.getName();
-           if (Name.toUpperCase().equals("Q")) // user wants to quit
+           String name = this.getName();
+           if (name.toUpperCase().equals("Q")) // user wants to quit
                return; //exit the game
            
            //do the requested action and display the next view
-           done = this.doAction(Name);
+           done = this.doAction(name);
            
        } while (!done);
        
     }
-    
-}
     
     private String getName() {
      
@@ -77,7 +79,7 @@ public class StartProgramView {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println"\n" + this.promptMessage);
+            System.out.println("\n" + this.promptMessage);
 
             value = keyboard.nextLine();
             value = value.trim();
@@ -92,3 +94,24 @@ public class StartProgramView {
 
         return value;
 }
+
+    private boolean doAction(String name) {
+        
+        if (name.length() < 2) {
+            System.out.println("\nInvalid player name: "
+                + "The name must be greater than one character in length");
+            return false;
+        }
+     
+        Player player = GameControl.createPlayer(name);
+        
+        if (player == null) {
+            System.out.println("\nError creating the player.");
+            return false;
+        }
+        
+    }
+    
+}
+    
+    
