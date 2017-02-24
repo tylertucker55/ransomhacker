@@ -5,6 +5,8 @@
  */
 package ransomhacker;
 
+import byui.cit260.ransomhacker.model.Game;
+import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.view.StartProgramView;
 
 
@@ -19,6 +21,11 @@ import byui.cit260.ransomhacker.view.StartProgramView;
 public class RansomHacker {
 
     
+    private static Game currentGame = null;
+    private static Player player = null;
+
+   
+    
     
     /**
      * @param args the command line arguments
@@ -29,6 +36,22 @@ public class RansomHacker {
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
      
+    }
+    
+     public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        RansomHacker.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        RansomHacker.player = player;
     }
     
     
