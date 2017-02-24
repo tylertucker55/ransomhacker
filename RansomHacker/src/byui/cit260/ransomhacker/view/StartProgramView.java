@@ -7,6 +7,7 @@ package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
 import byui.cit260.ransomhacker.model.Player;
+import byui.cit260.ransomhacker.view.MainMenuView;
 import java.util.Scanner;
 
 /**
@@ -114,8 +115,17 @@ public class StartProgramView {
     }
 
     private void displayNextView(Player player) {
-         System.out.println("\n *** displayNextView() called ***");
+         
+        System.out.println("Good Luck" + player.getName());
+    
     }
+    
+    MainMenuView mainMenuView = new MainMenuView();
+    
+    mainMenuView.display();
+
+    
+
     
 }
     
