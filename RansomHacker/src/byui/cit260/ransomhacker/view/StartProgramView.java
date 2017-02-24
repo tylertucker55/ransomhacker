@@ -116,15 +116,15 @@ public class StartProgramView {
 
     private void displayNextView(Player player) {
          
-        System.out.println("Good Luck" + player.getName());
+        System.out.println("Good Luck " + player.getName());
     
-    }
+    
     
     MainMenuView mainMenuView = new MainMenuView();
     
-    mainMenuView.display();
+    mainMenuView.displayMainMenuView();
 
-    
+    }
 
     
 }

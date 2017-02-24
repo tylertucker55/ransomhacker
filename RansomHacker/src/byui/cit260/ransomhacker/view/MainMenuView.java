@@ -9,9 +9,9 @@ package byui.cit260.ransomhacker.view;
  *
  * @author 50mm3r
  */
-class MainMenuView {
+public class MainMenuView {
     
     void displayMainMenuView() {
-        System.out.println("\ndisplayMenu() function called");
+        System.out.println("\n***displayMenu() function called***");
     }
 }
