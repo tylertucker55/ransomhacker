@@ -5,32 +5,33 @@
  */
 package byui.cit260.ransomhacker.view;
 
-import byui.cit260.ransomhacker.control.GameControl;
 import java.util.Scanner;
-import ransomhacker.RansomHacker;
 
 /**
  *
- * @author 50mm3r
+ * @author Hansen
  */
-public class MainMenuView {
+public class HelpMenuView {
     
     private String menu;
     
-    public MainMenuView() {
+    public HelpMenuView() {
         this.menu = "\n"
                     + "\n----------------------------"
-                    + "\n| Main Menu                |"
+                    + "\n| Help Menu                |"
                     + "\n----------------------------"
-                    + "\n1 - New Game"
-                    + "\n2 - Open Save File"
-                    + "\n3 - Help (How to play)"
+                    + "\n1 - Object of the Game"
+                    + "\n2 - Stat Description"
+                    + "\n3 - Relocating"
+                    + "\n4 - Jobs"
+                    + "\n5 - Developing Skills"
+                    + "\n6 - Attacking"
                     + "\nQ - Quit"
                     + "\n----------------------------";
         System.out.println(menu);
     }
     
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         
         
         boolean done = false;
@@ -42,9 +43,9 @@ public class MainMenuView {
             done = this.doAction(menuOption);
             
         } while (!done);
-        }
-
-    private String getMenuOption() {
+    }
+    
+     private String getMenuOption() {
         Scanner keyboard = new Scanner(System.in);
         String value = "";
         boolean valid = false;
@@ -71,13 +72,22 @@ public class MainMenuView {
         
         switch (choice) {
             case "1":
-                this.newGame();
+                this.openObjectOfTheGame();
                 break;
             case "2":
-                this.openGame();
+                this.openStatDescription();
                 break;
             case "3":
-                this.displayHelpMenu();
+                this.openRelocating();
+                break;
+            case "4":
+                this.openJobs();
+                break;
+            case "5":
+                this.openDevelopingSkills();
+                break;
+            case "6":
+                this.openAttacking();
                 break;
             default:
                 System.out.println("\nInvalid Selection");
@@ -88,28 +98,27 @@ public class MainMenuView {
         return false;
     }
 
-    private void newGame() {
-        //create a new game
-        GameControl.createNewGame(RansomHacker.getPlayer());
-        //create a new game Menu view
-        
-        //Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+    private void openObjectOfTheGame() {
+        System.out.println("\n*** openObjectOfTheGame Function Called ***"); 
     }
 
-    private void openGame() {
-        System.out.println("openGame Function Called");
+    private void openStatDescription() {
+        System.out.println("\n*** openStatDescription Function Called ***");
     }
 
-    private void displayHelpMenu() {
-        System.out.println("HelpMenu Function Called");
-        //create a new game Menu view
-        
-        //Display the game menu
-        HelpMenuView gameMenu = new HelpMenuView();
-        gameMenu.displayHelpMenuView();
-        
+    private void openRelocating() {
+        System.out.println("\n*** openRelocating Function Called ***");
     }
-   
+
+    private void openJobs() {
+        System.out.println("o\n*** penJobs Function Called ***");
+    }
+
+    private void openDevelopingSkills() {
+        System.out.println("\n*** openDevelopingSkills Function Called ***");
+    }
+
+    private void openAttacking() {
+        System.out.println("\n*** openAttacking Function Called ***");
+    }
 }
