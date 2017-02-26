@@ -103,9 +103,6 @@ public class MainMenuView {
     }
 
     private void displayHelpMenu() {
-        System.out.println("HelpMenu Function Called");
-        //create a new game Menu view
-        
         //Display the game menu
         HelpMenuView gameMenu = new HelpMenuView();
         gameMenu.displayHelpMenuView();
