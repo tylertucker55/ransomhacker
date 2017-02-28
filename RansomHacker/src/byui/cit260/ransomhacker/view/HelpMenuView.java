@@ -108,10 +108,15 @@ public class HelpMenuView {
 
     private void openRelocating() {
         System.out.println("\n*** openRelocating Function Called ***");
+        LoadGameView gameMenu = new LoadGameView();
+        gameMenu.displayLoadGameView();
+        
     }
 
     private void openJobs() {
         System.out.println("o\n*** penJobs Function Called ***");
+        JobListView gameMenu = new JobListView();
+        gameMenu.displayJobListView();
     }
 
     private void openDevelopingSkills() {
