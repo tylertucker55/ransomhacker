@@ -26,8 +26,8 @@ public class MainMenuView {
                     + "\n2 - Open Save File"
                     + "\n3 - Help (How to play)"
                     + "\nQ - Quit"
-                    + "\n----------------------------";
-        System.out.println(menu);
+                    + "\n----------------------------"
+                    + "\nPlease select option ";
     }
     
     public void displayMainMenuView() {
@@ -50,7 +50,7 @@ public class MainMenuView {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println("\nChoose Menu Option:");
+            System.out.println(this.menu);
 
             value = keyboard.nextLine();
             value = value.trim();
@@ -100,6 +100,9 @@ public class MainMenuView {
 
     private void openGame() {
         System.out.println("openGame Function Called");
+        
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.displaySaveGameView();
     }
 
     private void displayHelpMenu() {
