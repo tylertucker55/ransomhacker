@@ -68,8 +68,8 @@ public class SaveGameView {
 
     private boolean doAction(String input) {
             if (input.length() < 2) {
-            System.out.println("\nInvalid player name: "
-                + "The name must be greater than one character in length");
+            System.out.println("\nInvalid file location: "
+                + "The location must be greater than one character in length");
             return false;
         }
      

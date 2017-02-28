@@ -50,7 +50,7 @@ public class MainMenuView {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println("\nChoose Menu Option:");
+            System.out.println("\nChoose Main Menu Option:");
 
             value = keyboard.nextLine();
             value = value.trim();
