@@ -115,7 +115,7 @@ public class HelpMenuView {
     }
 
     private void openJobs() {
-        System.out.println("o\n*** penJobs Function Called ***");
+        System.out.println("\n*** openJobs Function Called ***");
         JobListView gameMenu = new JobListView();
         gameMenu.displayJobListView();
     }
