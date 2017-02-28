@@ -7,6 +7,7 @@ package ransomhacker;
 
 import byui.cit260.ransomhacker.model.Game;
 import byui.cit260.ransomhacker.model.Player;
+import byui.cit260.ransomhacker.view.SaveGameView;
 import byui.cit260.ransomhacker.view.StartProgramView;
 
 
@@ -35,6 +36,7 @@ public class RansomHacker {
         
         StartProgramView startProgramView = new StartProgramView();
         startProgramView.displayStartProgramView();
+        
      
     }
     

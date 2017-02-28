@@ -100,6 +100,9 @@ public class MainMenuView {
 
     private void openGame() {
         System.out.println("openGame Function Called");
+        
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.displaySaveGameView();
     }
 
     private void displayHelpMenu() {
