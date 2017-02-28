@@ -27,8 +27,9 @@ public class HelpMenuView {
                     + "\n5 - Developing Skills"
                     + "\n6 - Attacking"
                     + "\nQ - Quit"
-                    + "\n----------------------------";
-        System.out.println(menu);
+                    + "\n----------------------------"
+                    + "\nPlease select an option";
+        
     }
     
     public void displayHelpMenuView() {
@@ -51,7 +52,7 @@ public class HelpMenuView {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println("\nChoose Menu Option:");
+            System.out.println(this.menu);
 
             value = keyboard.nextLine();
             value = value.trim();
@@ -121,6 +122,9 @@ public class HelpMenuView {
 
     private void openDevelopingSkills() {
         System.out.println("\n*** openDevelopingSkills Function Called ***");
+        DevelopSkillsMenuView skillsMenu = new DevelopSkillsMenuView();
+        skillsMenu.displayDevelopSkillsMenuView();
+        
     }
 
     private void openAttacking() {
