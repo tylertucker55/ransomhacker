@@ -64,10 +64,10 @@ public class LoadGameView {
             return false;
         }
             
-        GameControl.LoadGame(input);
+        boolean result = GameControl.LoadGame(input);
      
         this.displayBanner();
-        return true;
+        return result;
     }
        
     private void displayBanner() {
