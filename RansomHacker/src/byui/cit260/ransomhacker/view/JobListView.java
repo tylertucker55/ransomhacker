@@ -11,11 +11,11 @@ import java.util.Scanner;
  *
  * @author tylertucker
  */
-public class JobList {
+public class JobListView {
     
     private String menu;
     
-    public JobList() {
+    public JobListView() {
         this.menu = "\n"
                     + "\n----------------------------"
                     + "\n|       Job List           |"
@@ -27,7 +27,7 @@ public class JobList {
         System.out.println(menu);
     }
     
-    public void displayJobList() {
+    public void displayJobListView() {
         System.out.println("This is the job list function");
         
          boolean done = false;

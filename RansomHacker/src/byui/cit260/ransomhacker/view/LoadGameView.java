@@ -5,6 +5,7 @@
  */
 package byui.cit260.ransomhacker.view;
 
+import byui.cit260.ransomhacker.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -62,6 +63,8 @@ public class LoadGameView {
                 + "The location must be greater than one character in length");
             return false;
         }
+            
+        GameControl.LoadGame(input);
      
         this.displayBanner();
         return true;
