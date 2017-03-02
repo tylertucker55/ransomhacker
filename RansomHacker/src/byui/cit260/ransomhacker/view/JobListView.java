@@ -23,8 +23,8 @@ public class JobListView {
                     + "\n1 - Hack a local wifi password"
                     + "\n2 - Steal credit card numbers"
                     + "\n3 - Crash a rival bank"
-                    + "\n----------------------------";
-        System.out.println(menu);
+                    + "\n----------------------------"
+                    + "\nPlease select an option";
     }
     
     public void displayJobListView() {
@@ -47,7 +47,7 @@ public class JobListView {
         boolean valid = false;
 
         while (!valid) {
-            System.out.println("\nChoose Menu Option:");
+            System.out.println(this.menu);
 
             value = keyboard.nextLine();
             value = value.trim();
