@@ -24,12 +24,12 @@ public class DevelopSkillsMenuView {
                     + "\n2 - Certification Boot Camp"
                     + "\n3 - Psychology Class"
                     + "\nQ - Quit"
-                    + "\n----------------------------";
+                    + "\n----------------------------"
+                    + "\nPlease select a skill to develop";
         
     }
     
      public void displayDevelopSkillsMenuView() {
-        System.out.println("This is the Develop Skill function");
         
         boolean done = false;
         do {

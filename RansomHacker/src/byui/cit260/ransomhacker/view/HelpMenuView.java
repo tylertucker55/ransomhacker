@@ -121,7 +121,6 @@ public class HelpMenuView {
     }
 
     private void openDevelopingSkills() {
-        System.out.println("\n*** openDevelopingSkills Function Called ***");
         DevelopSkillsMenuView skillsMenu = new DevelopSkillsMenuView();
         skillsMenu.displayDevelopSkillsMenuView();
         

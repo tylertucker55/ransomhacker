@@ -144,7 +144,8 @@ public class GameMenuView {
     }
 
     private void displaySaveGame() {
-        System.out.println("displaySaveGame() Called");
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.displaySaveGameView();
     }
 
     private void displayMap() {
