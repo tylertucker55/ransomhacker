@@ -10,6 +10,12 @@ package byui.cit260.ransomhacker.control;
  * @author 50mm3r
  */
 public class RelocationControl {
+
+    public static boolean moveChar(String cityName) {
+        System.out.println("MoveChar() Called");
+        return true;
+        
+    }
    
     public double calcMoveCost(int timesMoved, int newCoordX, int newCoordY, int currentCoordX, int currentCoordY) {
         
