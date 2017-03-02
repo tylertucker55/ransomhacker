@@ -65,7 +65,8 @@ class RelocationView {
                 + "The name must be in the format [City, ST]");
             return false;
             }    
-            
+        // else RelocationControl.calcMoveCost(A, B, C, D, E); To be added when values are populated   
+        
         boolean result = RelocationControl.moveChar(cityName);
             
         return result;

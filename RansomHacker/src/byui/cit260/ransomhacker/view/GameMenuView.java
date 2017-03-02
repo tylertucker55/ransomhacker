@@ -33,7 +33,7 @@ public class GameMenuView {
                     + "\n9 - View Map"
                     + "\n10 - Help"
                     + "\nQ - Quit";
-   
+    
 }  
     
   public void displayGameMenu() {
