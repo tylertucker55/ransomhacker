@@ -33,13 +33,15 @@ public class GameMenuView {
                     + "\n9 - View Map"
                     + "\n10 - Help"
                     + "\nQ - Quit";
-        System.out.println(menu);
-}
-
+   
+}  
+    
   public void displayGameMenu() {
         
         boolean done = false;
         do {
+            
+            System.out.println(menu);
             String menuOption = this.getMenuOption();
             if (menuOption.toUpperCase().equals("Q"))
                 return;
@@ -136,7 +138,8 @@ public class GameMenuView {
     }
 
     private void displayRelocation() {
-        System.out.println("displayRelocation() Called");
+        RelocationView relocationView = new RelocationView();
+        relocationView.displayRelocationView();
     }
 
     private void displayPayRansom() {
