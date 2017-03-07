@@ -40,8 +40,9 @@ public class GameControl {
         System.out.println("\n*** createNewGame stub function called***");
     }
 
-    public static void LoadGame(String input) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static boolean LoadGame(String input) {
+        System.out.println("\n*** loadGame stub function called***");
+        return true;
     }
     
 }
