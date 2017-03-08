@@ -13,12 +13,12 @@ import ransomhacker.RansomHacker;
  *
  * @author 50mm3r
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private String menu;
+    
     
     public MainMenuView() {
-        this.menu = "\n"
+               super( "\n"
                     + "\n----------------------------"
                     + "\n| Main Menu                |"
                     + "\n----------------------------"
@@ -27,46 +27,15 @@ public class MainMenuView {
                     + "\n3 - Help (How to play)"
                     + "\nQ - Quit"
                     + "\n----------------------------"
-                    + "\nPlease select option ";
+                    + "\nPlease select option ");
     }
     
-    public void displayMainMenuView() {
-        
-        
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
+    
 
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
+   
 
-        while (!valid) {
-            System.out.println(this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() != 1) {
-                System.out.println("\nInvalid value");
-                continue;
-            }
-
-            break;
-        }
-
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {
