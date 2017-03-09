@@ -14,51 +14,15 @@ import java.util.Scanner;
  *
  * @author 50mm3r
  */
-class RelocationView {
+public class RelocationView extends View {
+   
+    public RelocationView() {
+        super("\nPlease enter the destination City (ex. Rexburg, ID)"
+                            + "\n Enter Q to quit");
+      }
     
-    private String promptMessage;
-    
-    public void displayRelocationView() {
-      this.promptMessage = "\nPlease enter the destination City (ex. Rexburg, ID)"
-                            + "\n Enter Q to quit";
-      
-      boolean done = false;
-       do {
-           // this function prompts for and get players name
-           String cityName = this.getCityName();
-           if (cityName.toUpperCase().equals("Q")) // user wants to quit
-               return;
-           
-           //do the requested action and display the next view
-           done = this.doAction(cityName);
-           
-       } while (!done);
-    }
-    
-    private String getCityName() {
-     
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-
-            break;
-        }
-
-        return value;
-}
-
-    private boolean doAction(String cityName) {
+    @Override
+    public boolean doAction(String cityName) {
                
         if (cityName.length() < 2) {
             System.out.println("\nInvalid city name: "
