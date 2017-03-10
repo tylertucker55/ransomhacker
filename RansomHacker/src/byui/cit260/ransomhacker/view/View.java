@@ -48,7 +48,7 @@ public abstract class View implements ViewInterface {
             value = keyboard.nextLine();
             value = value.trim();
 
-            if (value.length() != 1) {
+            if (value.length() == 0) {
                 System.out.println("\nInvalid value");
                 continue;
             }
