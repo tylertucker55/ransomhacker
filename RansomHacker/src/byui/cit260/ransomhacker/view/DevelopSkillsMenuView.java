@@ -11,12 +11,12 @@ import java.util.Scanner;
  *
  * @author Hansen
  */
-public class DevelopSkillsMenuView {
+public class DevelopSkillsMenuView extends View {
    
-    private String menu;
+   
     
     public DevelopSkillsMenuView() {
-        this.menu = "\n"
+               super( "\n"
                     + "\n----------------------------"
                     + "\n|     Develop Skills        |"
                     + "\n----------------------------"
@@ -25,46 +25,14 @@ public class DevelopSkillsMenuView {
                     + "\n3 - Psychology Class"
                     + "\nQ - Quit"
                     + "\n----------------------------"
-                    + "\nPlease select a skill to develop";
+                    + "\nPlease select a skill to develop");
         
     }
     
-     public void displayDevelopSkillsMenuView() {
-        
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
     
-     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
 
-        while (!valid) {
-            System.out.println(this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() != 1) {
-                System.out.println("\nInvalid value");
-                continue;
-            }
-
-            break;
-        }
-
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {

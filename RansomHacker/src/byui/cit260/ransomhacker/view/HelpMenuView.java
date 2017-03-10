@@ -11,12 +11,12 @@ import java.util.Scanner;
  *
  * @author Hansen
  */
-public class HelpMenuView {
+public class HelpMenuView extends View {
     
-    private String menu;
+    
     
     public HelpMenuView() {
-        this.menu = "\n"
+                super("\n"
                     + "\n----------------------------"
                     + "\n| Help Menu                |"
                     + "\n----------------------------"
@@ -28,47 +28,12 @@ public class HelpMenuView {
                     + "\n6 - Attacking"
                     + "\nQ - Quit"
                     + "\n----------------------------"
-                    + "\nPlease select an option";
+                    + "\nPlease select an option");
         
     }
     
-    public void displayHelpMenuView() {
-        
-        
-        boolean done = false;
-        do {
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-    }
-    
-     private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
 
-        while (!valid) {
-            System.out.println(this.menu);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() != 1) {
-                System.out.println("\nInvalid value");
-                continue;
-            }
-
-            break;
-        }
-
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {
@@ -122,7 +87,7 @@ public class HelpMenuView {
 
     private void openDevelopingSkills() {
         DevelopSkillsMenuView skillsMenu = new DevelopSkillsMenuView();
-        skillsMenu.displayDevelopSkillsMenuView();
+        skillsMenu.display();
         
     }
 

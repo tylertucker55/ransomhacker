@@ -18,55 +18,16 @@ import java.util.Scanner;
  */
 
  
-public class SaveGameView {
+public class SaveGameView extends View {
     
-    private String promptMessage;
+    
     public SaveGameView (){
-        this.promptMessage = "\nEnter file location to save the game?";
+        super("\nEnter file location to save the game?");
         
     }
 
     
-    
-     public void displaySaveGameView() {
-          
-       boolean done = false;
-       do {
-           // this function prompts for and get players name
-           String input = this.getInput();
-           if (input.toUpperCase().equals("Q")) // user wants to quit without saving
-               return; //exit the game
-           
-           //do the requested action and display the next view
-           done = this.doAction(input);
-           
-       } while (!done);
-       
-    }
-
-    private String getInput() {
-    
-           Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\n" + this.promptMessage);
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value: value cannot be blank");
-                continue;
-            }
-
-            break;
-        }
-        return value;
-    }
-
-    private boolean doAction(String input) {
+    public boolean doAction(String input) {
             if (input.length() < 2) {
             System.out.println("\nInvalid file location: "
                 + "The location must be greater than one character in length");

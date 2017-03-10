@@ -148,7 +148,7 @@ public class GameMenuView {
 
     private void displaySaveGame() {
         SaveGameView saveGameView = new SaveGameView();
-        saveGameView.displaySaveGameView();
+        saveGameView.display();
     }
 
     private void displayMap() {
@@ -157,7 +157,7 @@ public class GameMenuView {
 
     private void displayHelpMenu() {
         HelpMenuView gameMenu = new HelpMenuView();
-        gameMenu.displayHelpMenuView();    
+        gameMenu.display();    
     }
 
  
