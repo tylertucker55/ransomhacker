@@ -70,6 +70,8 @@ public class HelpMenuView extends View {
 
     private void openStatDescription() {
         System.out.println("\n*** openStatDescription Function Called ***");
+        CharacterStatsView gameMenu = new CharacterStatsView();
+        gameMenu.display();
     }
 
     private void openRelocating() {
