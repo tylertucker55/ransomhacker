@@ -95,7 +95,8 @@ public class GameMenuView extends View {
     }
 
     private void displayStore() {
-        System.out.println("displayStore() Called");
+        StoreView gameMenu = new StoreView();
+        gameMenu.display();
     }
 
     private void displayRelocation() {
