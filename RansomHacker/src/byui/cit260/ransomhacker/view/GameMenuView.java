@@ -13,12 +13,11 @@ import ransomhacker.RansomHacker;
  *
  * @author Hansen
  */
-public class GameMenuView {
+public class GameMenuView extends View {
     
-    private String menu;
     
     public GameMenuView() {
-        this.menu = "\nDays until ransom is due: " + GameControl.character.getDaysLeft()
+        super("\nDays until ransom is due: " + GameControl.character.getDaysLeft()
                     + "\nFBI detection: " + GameControl.character.getDetection() + "%"
                     + "\nMoney: $" + GameControl.character.getMoney() + "/$" + GameControl.character.getMoneyLeft()
                     + "\n------------------------------"
@@ -32,49 +31,11 @@ public class GameMenuView {
                     + "\n8 - Save Game"
                     + "\n9 - View Map"
                     + "\n10 - Help"
-                    + "\nQ - Quit";
+                    + "\nQ - Quit");
     
 }  
-    
-  public void displayGameMenu() {
-        
-        boolean done = false;
-        do {
-            
-            System.out.println(menu);
-            String menuOption = this.getMenuOption();
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
-            
-        } while (!done);
-        }
-
-    private String getMenuOption() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
-        boolean valid = false;
-
-        while (!valid) {
-            System.out.println("\nChoose Menu Option:");
-
-            value = keyboard.nextLine();
-            value = value.trim();
-
-            if (value.length() < 1) {
-                System.out.println("\nInvalid value");
-                continue;
-     
-            }
-
-            break;
-        }
-
-        return value;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch (choice) {
@@ -139,7 +100,7 @@ public class GameMenuView {
 
     private void displayRelocation() {
         RelocationView relocationView = new RelocationView();
-        relocationView.displayRelocationView();
+        relocationView.display();
     }
 
     private void displayPayRansom() {
