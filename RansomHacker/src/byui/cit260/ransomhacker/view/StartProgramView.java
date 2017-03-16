@@ -26,7 +26,7 @@ public class StartProgramView extends View{
         System.out.println(
         "\n****************************************************************************************************"
         +"\n*                                                                                                  *"
-        +"\n*                          This is your author Hansen Muhile                                       *"
+        +"\n*                                                                                                  *"
         +"\n*                                                                                                  *"
         +"\n*                        This is a great game. Hope you like it                                    *"
         +"\n*                                                                                                  *"
