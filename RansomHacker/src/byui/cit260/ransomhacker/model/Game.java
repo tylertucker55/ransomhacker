@@ -6,6 +6,7 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
+import javax.tools.JavaFileManager;
 /**
  *
  * @author 50mm3r
@@ -55,6 +56,42 @@ public class Game implements Serializable {
         return "Game{" + "daysLeft=" + daysLeft + '}';
     }
     
-    
+    private double totalTime;
+    private Player player;
+    private Item item;
+    private Map map;
+    private Scene scene;
+    private Skills skills;
+    private Attack attack;
+    private Character character;
+    private Location location;
+    private SkillDevelopment skillDevelopment;
+
+    public void setJob(Job job) {
+    }
+
+    public void setPlayer(Player player) {
+    }
+
+    public void setItem(Item item) {
+    }
+
+    public void setMap(Map map) {
+    }
+
+    public void setAttack(Attack attack) {
+    }
+
+    public void setScene(Scene scene) {
+    }
+
+    public void setSkillDevelopment(SkillDevelopment skillDevelopment) {
+    }
+
+    public void setSkills(Skills skills) {
+    }
+
+    public void setLocation(JavaFileManager.Location location) {
+    }
     
 }

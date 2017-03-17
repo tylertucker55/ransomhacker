@@ -5,11 +5,19 @@
  */
 package byui.cit260.ransomhacker.control;
 
+import byui.cit260.ransomhacker.model.Map;
+
 /**
  *
  * @author tylertucker
  */
 public class ViewMapControl {
+
+    public static Map createMap() {
+        Map map = null;
+        System.out.println("\n*** createMap() called ***");
+        return map;
+    }
     public int calcReductionInDetection(int detectionPercent, int distanceA, int distanceB) {
         
         if (distanceA < 0 || distanceB < 0) {
