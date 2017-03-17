@@ -28,8 +28,8 @@ public enum Location implements Serializable {
     Cheyenne(2,3),
     Denver(3,3),
     Albuquerque(4,3),
-    Lubbock(5,3)
-    ElPaso(6,3),
+    Lubbock(5,3),
+    ElPaso(6,3)
     
     ;
     
