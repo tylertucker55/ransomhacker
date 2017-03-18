@@ -79,15 +79,18 @@ public class GameMenuView extends View {
     }      
 
     private void displayCharStats() {
-        System.out.println("displayCharStats() Called");
+        CharacterStatsView statsMenu = new CharacterStatsView();
+        statsMenu.display();
     }
 
     private void displayJobs() {
-        System.out.println("displayJobs() Called");
+        JobListView jobMenu = new JobListView();
+        jobMenu.display();
     }
 
     private void displaySkillDev() {
-        System.out.println("displaySkillDev() Called");
+        DevelopSkillsMenuView skillsMenu = new DevelopSkillsMenuView();
+        skillsMenu.display();
     }
 
     private void displayInventory() {

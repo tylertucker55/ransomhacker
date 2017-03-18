@@ -6,6 +6,7 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -15,20 +16,37 @@ import java.util.Objects;
 public class Character implements Serializable {
 
 private String name;
-private int hackingLevel;
-private int socialLevel;
-private int stealthLevel;
-private int coordinateX;
-private int coordinateY;
+private Player player;
+private Game game;
+private Location location;
 private String items;
 private double money;
 private int daysLeft;
 private double detection;
 private double moneyLeft;
+
+private Item[] inventory;
+private Skills[] skillLevels; 
   
 public Character() {
     
 }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Item[] getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Item[] inventory) {
+        this.inventory = inventory;
+    }
 
     public String getName() {
         return name;
@@ -38,44 +56,20 @@ public Character() {
         this.name = name;
     }
 
-    public int getHackingLevel() {
-        return hackingLevel;
+    public Game getGame() {
+        return game;
     }
 
-    public void setHackingLevel(int hackingLevel) {
-        this.hackingLevel = hackingLevel;
+    public void setGame(Game game) {
+        this.game = game;
     }
 
-    public int getSocialLevel() {
-        return socialLevel;
+    public Location getLocation() {
+        return location;
     }
 
-    public void setSocialLevel(int socialLevel) {
-        this.socialLevel = socialLevel;
-    }
-
-    public int getStealthLevel() {
-        return stealthLevel;
-    }
-
-    public void setStealthLevel(int stealthLevel) {
-        this.stealthLevel = stealthLevel;
-    }
-
-    public int getCoordinateX() {
-        return coordinateX;
-    }
-
-    public void setCoordinateX(int coordinateX) {
-        this.coordinateX = coordinateX;
-    }
-
-    public int getCoordinateY() {
-        return coordinateY;
-    }
-
-    public void setCoordinateY(int coordinateY) {
-        this.coordinateY = coordinateY;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
     public String getItems() {
@@ -118,20 +112,28 @@ public Character() {
         this.moneyLeft = moneyLeft;
     }
 
+    public Skills[] getSkillLevels() {
+        return skillLevels;
+    }
+
+    public void setSkillLevels(Skills[] skillLevels) {
+        this.skillLevels = skillLevels;
+    }
+
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 89 * hash + Objects.hashCode(this.name);
-        hash = 89 * hash + this.hackingLevel;
-        hash = 89 * hash + this.socialLevel;
-        hash = 89 * hash + this.stealthLevel;
-        hash = 89 * hash + this.coordinateX;
-        hash = 89 * hash + this.coordinateY;
-        hash = 89 * hash + Objects.hashCode(this.items);
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
-        hash = 89 * hash + this.daysLeft;
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.detection) ^ (Double.doubleToLongBits(this.detection) >>> 32));
-        hash = 89 * hash + (int) (Double.doubleToLongBits(this.moneyLeft) ^ (Double.doubleToLongBits(this.moneyLeft) >>> 32));
+        int hash = 5;
+        hash = 37 * hash + Objects.hashCode(this.name);
+        hash = 37 * hash + Objects.hashCode(this.player);
+        hash = 37 * hash + Objects.hashCode(this.game);
+        hash = 37 * hash + Objects.hashCode(this.location);
+        hash = 37 * hash + Objects.hashCode(this.items);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
+        hash = 37 * hash + this.daysLeft;
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.detection) ^ (Double.doubleToLongBits(this.detection) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.moneyLeft) ^ (Double.doubleToLongBits(this.moneyLeft) >>> 32));
+        hash = 37 * hash + Arrays.deepHashCode(this.inventory);
+        hash = 37 * hash + Arrays.deepHashCode(this.skillLevels);
         return hash;
     }
 
@@ -147,21 +149,6 @@ public Character() {
             return false;
         }
         final Character other = (Character) obj;
-        if (this.hackingLevel != other.hackingLevel) {
-            return false;
-        }
-        if (this.socialLevel != other.socialLevel) {
-            return false;
-        }
-        if (this.stealthLevel != other.stealthLevel) {
-            return false;
-        }
-        if (this.coordinateX != other.coordinateX) {
-            return false;
-        }
-        if (this.coordinateY != other.coordinateY) {
-            return false;
-        }
         if (Double.doubleToLongBits(this.money) != Double.doubleToLongBits(other.money)) {
             return false;
         }
@@ -180,14 +167,28 @@ public Character() {
         if (!Objects.equals(this.items, other.items)) {
             return false;
         }
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Objects.equals(this.game, other.game)) {
+            return false;
+        }
+        if (this.location != other.location) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.inventory, other.inventory)) {
+            return false;
+        }
+        if (!Arrays.deepEquals(this.skillLevels, other.skillLevels)) {
+            return false;
+        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Character{" + "name=" + name + ", hackingLevel=" + hackingLevel + ", socialLevel=" + socialLevel + ", stealthLevel=" + stealthLevel + ", coordinateX=" + coordinateX + ", coordinateY=" + coordinateY + ", items=" + items + ", money=" + money + ", daysLeft=" + daysLeft + ", detection=" + detection + ", moneyLeft=" + moneyLeft + '}';
+        return "Character{" + "name=" + name + ", player=" + player + ", game=" + game + ", location=" + location + ", items=" + items + ", money=" + money + ", daysLeft=" + daysLeft + ", detection=" + detection + ", moneyLeft=" + moneyLeft + ", inventory=" + inventory + ", skillLevels=" + skillLevels + '}';
     }
 
-
-
+    
 }

@@ -6,6 +6,7 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 /**
  *
  * @author 50mm3r
@@ -13,8 +14,11 @@ import java.io.Serializable;
 public class Game implements Serializable {
 
     private int daysLeft;
+    private Map map;
+    ArrayList<Attack> attacks;
     
     public Game() {
+        this.attacks = new ArrayList<>();
     }
 
     public int getDaysLeft() {
