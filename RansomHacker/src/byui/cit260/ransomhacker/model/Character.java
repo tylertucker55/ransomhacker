@@ -24,6 +24,7 @@ private double money;
 private int daysLeft;
 private double detection;
 private double moneyLeft;
+private int timesMoved;
 
 private Item[] inventory;
 private Skills[] skillLevels; 
@@ -32,6 +33,15 @@ public Character() {
     
 }
 
+    public int getTimesMoved() {
+        return timesMoved;
+    }
+
+    public void setTimesMoved(int timesMoved) {
+        this.timesMoved = timesMoved;
+    }
+  
+    
     public Player getPlayer() {
         return player;
     }

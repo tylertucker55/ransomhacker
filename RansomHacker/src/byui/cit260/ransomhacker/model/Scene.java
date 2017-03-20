@@ -19,6 +19,8 @@ public class Scene implements Serializable {
     ArrayList<Job> jobs;
     ArrayList<Store> itemsAvailable;
     ArrayList<SkillDevelopment> courses;
+    private int size;
+    private String symbol;
     
     
     public Scene(){
@@ -27,6 +29,25 @@ public class Scene implements Serializable {
         this.courses = new ArrayList<>();
     }
 
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    
+    
+    
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+    
     public Location getLocation() {
         return location;
     }

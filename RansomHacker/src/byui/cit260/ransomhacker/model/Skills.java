@@ -16,7 +16,7 @@ public class Skills implements Serializable {
     
     private String name;
     private String description;
-    private int value;
+    private int level;
     
     public Skills() {
         
@@ -38,12 +38,12 @@ public class Skills implements Serializable {
         this.description = description;
     }
 
-    public int getValue() {
-        return value;
+    public int getLevel() {
+        return level;
     }
 
-    public void setValue(int value) {
-        this.value = value;
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Skills implements Serializable {
         int hash = 7;
         hash = 61 * hash + Objects.hashCode(this.name);
         hash = 61 * hash + Objects.hashCode(this.description);
-        hash = 61 * hash + this.value;
+        hash = 61 * hash + this.level;
         return hash;
     }
 
@@ -67,7 +67,7 @@ public class Skills implements Serializable {
             return false;
         }
         final Skills other = (Skills) obj;
-        if (this.value != other.value) {
+        if (this.level != other.level) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
@@ -81,7 +81,7 @@ public class Skills implements Serializable {
 
     @Override
     public String toString() {
-        return "Skills{" + "name=" + name + ", description=" + description + ", value=" + value + '}';
+        return "Skills{" + "name=" + name + ", description=" + description + ", level=" + level + '}';
     }
     
     

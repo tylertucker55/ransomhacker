@@ -10,10 +10,152 @@ import java.io.Serializable;
 import java.util.Objects;
 /**
  *
- * @author tylertucker
+ * @author Brandon
  */
-public enum Location implements Serializable {
+public class Location implements Serializable {
+    
+    private String name;
+    private int size;
+    private String symbol;
+    private int row;
+    private int column;
+    private boolean visited;        
+    private Scene scene;
+    private Character character;
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getColumn() {
+        return column;
+    }
+
+    public void setColumn(int column) {
+        this.column = column;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public Scene getScene() {
+        return scene;
+    }
+
+    public void setScene(Scene scene) {
+        this.scene = scene;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 5;
+        hash = 73 * hash + Objects.hashCode(this.name);
+        hash = 73 * hash + this.size;
+        hash = 73 * hash + Objects.hashCode(this.symbol);
+        hash = 73 * hash + this.row;
+        hash = 73 * hash + this.column;
+        hash = 73 * hash + (this.visited ? 1 : 0);
+        hash = 73 * hash + Objects.hashCode(this.scene);
+        hash = 73 * hash + Objects.hashCode(this.character);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Location other = (Location) obj;
+        if (this.size != other.size) {
+            return false;
+        }
+        if (this.row != other.row) {
+            return false;
+        }
+        if (this.column != other.column) {
+            return false;
+        }
+        if (this.visited != other.visited) {
+            return false;
+        }
+        if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.symbol, other.symbol)) {
+            return false;
+        }
+        if (!Objects.equals(this.scene, other.scene)) {
+            return false;
+        }
+        if (!Objects.equals(this.character, other.character)) {
+            return false;
+        }
+        return true;
+    }
+
+    @Override
+    public String toString() {
+        return "Location{" + "name=" + name + ", size=" + size + ", symbol=" + symbol + ", row=" + row + ", column=" + column + ", visited=" + visited + ", scene=" + scene + ", character=" + character + '}';
+    }
+
+    
+    
+}
+
+    
+
+ 
+    
+    
+    
+/*
     Seattle(4,"[WA]",1,1),
     Portland(3,"[OR]",2,1),
     Oakland(4,"[CA]",3,1),
@@ -43,7 +185,7 @@ public enum Location implements Serializable {
     Tulsa(3,"[OK]",4,5),
     Dallas(4,"[TX]",5,5),
     Houston(5,"[TX]",5,6),
-    Milwaukee(3,"[MN]",1,6),
+    Milwaukee(3,"[WI]",1,6),
     Chicago(5,"[IL]",2,6),
     Indianapolis(3,"[IN]",3,6),
     LittleRock(2,"[AR]",4,6),
@@ -67,7 +209,9 @@ public enum Location implements Serializable {
     Raleigh(2,"[NC]",4,9),
     Charleston(2,"[SC]",5,9),
     Atlanta(5,"[GA]",6,9),
-    Miami(2,"[Fl]",7,9);
+    Miami(2,"[FL]",7,9);
+    
+    
     
     private final Point coordinates;
     private final String symbol;
@@ -92,5 +236,6 @@ public enum Location implements Serializable {
         return size;
     }
     
+    */
+
     
-}

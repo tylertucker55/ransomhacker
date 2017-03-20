@@ -6,6 +6,8 @@
 package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
+import byui.cit260.ransomhacker.control.ViewMapControl;
+import byui.cit260.ransomhacker.control.ViewMapControl.SceneList;
 import java.util.Scanner;
 import ransomhacker.RansomHacker;
 
@@ -117,7 +119,69 @@ public class GameMenuView extends View {
     }
 
     private void displayMap() {
-        System.out.println("displayMap() Called");
+        System.out.println("   1   2   3   4   5   6   7   8   9");
+        System.out.println("1 "  + SceneList.Seattle.getSymbol()
+                                 + SceneList.Spokane.getSymbol()
+                                 + SceneList.Helena.getSymbol()
+                                 + SceneList.Bismark.getSymbol()
+                                 + SceneList.Minneapolis.getSymbol()
+                                 + SceneList.Milwaukee.getSymbol()
+                                 + SceneList.Detroit.getSymbol()
+                                 + SceneList.NewYork.getSymbol()
+                                 + SceneList.Boston.getSymbol()
+                       + "\n2 "  + SceneList.Portland.getSymbol()
+                                 + SceneList.Rexburg.getSymbol()
+                                 + SceneList.Cheyenne.getSymbol()
+                                 + SceneList.RapidCity.getSymbol()
+                                 + SceneList.DesMoines.getSymbol()
+                                 + SceneList.Chicago.getSymbol()
+                                 + SceneList.Cleveland.getSymbol()
+                                 + SceneList.Philidelphia.getSymbol()
+                                 + SceneList.Trenton.getSymbol()
+                       + "\n3 "  + SceneList.Oakland.getSymbol()
+                                 + SceneList.SaltLakeCity.getSymbol()
+                                 + SceneList.Denver.getSymbol()
+                                 + SceneList.KansasCity.getSymbol()
+                                 + SceneList.StLouis.getSymbol()
+                                 + SceneList.Indianapolis.getSymbol()
+                                 + SceneList.Cincinnati.getSymbol()
+                                 + SceneList.Baltimore.getSymbol()
+                                 + SceneList.WashingtonDC.getSymbol()
+                       + "\n4 "  + SceneList.LosAngeles.getSymbol()
+                                 + SceneList.LasVegas.getSymbol()
+                                 + SceneList.Albuquerque.getSymbol()
+                                 + SceneList.Amarillo.getSymbol()
+                                 + SceneList.Tulsa.getSymbol()
+                                 + SceneList.LittleRock.getSymbol()
+                                 + SceneList.Louisville.getSymbol()
+                                 + SceneList.Richmond.getSymbol()
+                                 + SceneList.Raleigh.getSymbol()
+                        + "\n5 " + SceneList.SanDiego.getSymbol()
+                                 + SceneList.Phoenix.getSymbol()
+                                 + SceneList.Lubbock.getSymbol()
+                                 + SceneList.Austin.getSymbol()
+                                 + SceneList.Dallas.getSymbol()
+                                 + SceneList.BatonRouge.getSymbol()
+                                 + SceneList.Nashville.getSymbol()
+                                 + SceneList.Knoxville.getSymbol()
+                                 + SceneList.Charleston.getSymbol()
+                        + "\n6 " + "[--]" + "[--}"
+                                 + SceneList.ElPaso.getSymbol()
+                                 + SceneList.SanAntonio.getSymbol()
+                                 + SceneList.Houston.getSymbol()
+                                 + SceneList.NewOrleans.getSymbol()
+                                 + SceneList.Jackson.getSymbol()
+                                 + SceneList.Montgomery.getSymbol()
+                                 + SceneList.Atlanta.getSymbol()
+                        + "\n7 " + "[--]" + "[--]" + "[--]"   
+                                 + SceneList.McAllen.getSymbol()
+                                 + "[--]" + "[--]" + "[--]" + "[--}"
+                                 + SceneList.Miami.getSymbol());
+        
+        
+        
+        
+       ;
     }
 
     private void displayHelpMenu() {
