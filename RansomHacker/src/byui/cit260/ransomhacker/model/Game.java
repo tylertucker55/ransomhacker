@@ -117,43 +117,7 @@ public class Game implements Serializable {
     public String toString() {
         return "Game{" + "daysLeft=" + daysLeft + ", map=" + map + ", player=" + player + ", character=" + character + ", attacks=" + attacks + '}';
     }
-    
-    private double totalTime;
-    private Player player;
-    private Item item;
-    private Map map;
-    private Scene scene;
-    private Skills skills;
-    private Attack attack;
-    private Character character;
-    private Location location;
-    private SkillDevelopment skillDevelopment;
 
-    public void setJob(Job job) {
-    }
 
-    public void setPlayer(Player player) {
-    }
-
-    public void setItem(Item item) {
-    }
-
-    public void setMap(Map map) {
-    }
-
-    public void setAttack(Attack attack) {
-    }
-
-    public void setScene(Scene scene) {
-    }
-
-    public void setSkillDevelopment(SkillDevelopment skillDevelopment) {
-    }
-
-    public void setSkills(Skills skills) {
-    }
-
-    public void setLocation(JavaFileManager.Location location) {
-    }
     
 }
