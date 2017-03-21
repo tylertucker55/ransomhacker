@@ -7,6 +7,7 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 /**
  *
@@ -14,45 +15,78 @@ import java.util.Objects;
  */
 public class Scene implements Serializable {
 
+    private Location location;
+    ArrayList<Job> jobs;
+    ArrayList<Store> itemsAvailable;
+    ArrayList<SkillDevelopment> courses;
+    private int size;
+    private String symbol;
     
-    private String name;
-    private String displaySymbol;
-    private double travelTime;
-	
     
-    public Scene() {
+    public Scene(){
+        this.jobs = new ArrayList<>();
+        this.itemsAvailable = new ArrayList<>();
+        this.courses = new ArrayList<>();
     }
 
-    public String getName() {
-        return name;
+    public String getSymbol() {
+        return symbol;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSymbol(String symbol) {
+        this.symbol = symbol;
     }
 
-    public String getDisplaySymbol() {
-        return displaySymbol;
+    
+    
+    
+    public int getSize() {
+        return size;
     }
 
-    public void setDisplaySymbol(String displaySymbol) {
-        this.displaySymbol = displaySymbol;
+    public void setSize(int size) {
+        this.size = size;
+    }
+    
+    public Location getLocation() {
+        return location;
     }
 
-	public double getTravelTime() {
-        return travelTime;
+    public void setLocation(Location location) {
+        this.location = location;
     }
 
-    public void setTravelTime(double travelTime) {
-        this.travelTime = travelTime;
+    public ArrayList<Job> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(ArrayList<Job> jobs) {
+        this.jobs = jobs;
+    }
+
+    public ArrayList<Store> getItemsAvailable() {
+        return itemsAvailable;
+    }
+
+    public void setItemsAvailable(ArrayList<Store> itemsavailable) {
+        this.itemsAvailable = itemsavailable;
+    }
+
+    public ArrayList<SkillDevelopment> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(ArrayList<SkillDevelopment> courses) {
+        this.courses = courses;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + Objects.hashCode(this.displaySymbol);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.travelTime) ^ (Double.doubleToLongBits(this.travelTime) >>> 32));
+        hash = 41 * hash + Objects.hashCode(this.location);
+        hash = 41 * hash + Objects.hashCode(this.jobs);
+        hash = 41 * hash + Objects.hashCode(this.itemsAvailable);
+        hash = 41 * hash + Objects.hashCode(this.courses);
         return hash;
     }
 
@@ -68,13 +102,16 @@ public class Scene implements Serializable {
             return false;
         }
         final Scene other = (Scene) obj;
-        if (Double.doubleToLongBits(this.travelTime) != Double.doubleToLongBits(other.travelTime)) {
+        if (this.location != other.location) {
             return false;
         }
-        if (!Objects.equals(this.name, other.name)) {
+        if (!Objects.equals(this.jobs, other.jobs)) {
             return false;
         }
-        if (!Objects.equals(this.displaySymbol, other.displaySymbol)) {
+        if (!Objects.equals(this.itemsAvailable, other.itemsAvailable)) {
+            return false;
+        }
+        if (!Objects.equals(this.courses, other.courses)) {
             return false;
         }
         return true;
@@ -82,10 +119,8 @@ public class Scene implements Serializable {
 
     @Override
     public String toString() {
-        return "Scene{" + "name=" + name + ", displaySymbol=" + displaySymbol + ", travelTime=" + travelTime + '}';
+        return "Scene{" + "location=" + location + ", jobs=" + jobs + ", itemsAvailable=" + itemsAvailable + ", courses=" + courses + '}';
     }
-	
-	
     
     
     

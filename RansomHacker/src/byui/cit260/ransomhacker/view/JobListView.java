@@ -30,13 +30,16 @@ public class JobListView extends View {
         
         switch (choice) {
             case "1":
-                this.hackWifiPass();
+                System.out.println("Job " + choice + " Selected");
+                displayAttackMenu();
                 break;
             case "2":
-                this.stealCreditCard();
+                System.out.println("Job " + choice + " Selected");
+                displayAttackMenu();
                 break;
             case "3":
-                this.crashRivalBank();
+                System.out.println("Job " + choice + " Selected");
+                displayAttackMenu();
                 break;
             default:
                 System.out.println("\nInvalid Selection");
@@ -47,16 +50,8 @@ public class JobListView extends View {
         return false;
     }
 
-    private void hackWifiPass() {
-        System.out.println("\nSelected Wifi Hack");
+    private void displayAttackMenu() {
+        AttackMenuView attackMenu = new AttackMenuView();
+        attackMenu.display();
     }
-
-    private void stealCreditCard() {
-        System.out.println("\nSelected Steal Credit Card");
-    }
-
-    private void crashRivalBank() {
-        System.out.println("\nSelected Crash Rival Bank");
-    }
-
 }

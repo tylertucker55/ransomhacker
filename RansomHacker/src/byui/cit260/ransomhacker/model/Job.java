@@ -17,6 +17,8 @@ public class Job implements Serializable {
     private String name;
     private String state;
     
+    
+    
     public Job() {
     }
 

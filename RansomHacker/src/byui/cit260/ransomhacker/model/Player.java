@@ -5,7 +5,9 @@
  */
 package byui.cit260.ransomhacker.model;
 
+import java.awt.List;
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 
@@ -17,9 +19,29 @@ public class Player implements Serializable {
     
     private String name;
     private int bestTime;
+    private Game game;
+    ArrayList<Character> character;
+
+    public Game getGame() {
+        return game;
+    }
+
+    public void setGame(Game game) {
+        this.game = game;
+    }
+    
     
     public Player(){
+        this.character = new ArrayList<>();
         
+    }
+    
+    public ArrayList<Character> getCharacter() {
+        return character;
+    }
+
+    public void setCharacter(ArrayList<Character> character) {
+        this.character = character;
     }
 
     public String getName() {

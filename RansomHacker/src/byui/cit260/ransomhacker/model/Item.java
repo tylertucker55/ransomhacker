@@ -7,6 +7,7 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -17,14 +18,19 @@ public class Item implements Serializable {
 
     private String name;
     private String description;
-    private double value;
     private double cost;
     private double quantity;
-    private String effects;
+    private boolean owned;
+    private int hackingLevel;
+    private int socialLevel;
+    private int precisionLevel;
+    private int speedLevel;
+    private int stealthLevel;
 
     public Item() {
     }
 
+    
     public String getName() {
         return name;
     }
@@ -39,14 +45,6 @@ public class Item implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public double getValue() {
-        return value;
-    }
-
-    public void setValue(double value) {
-        this.value = value;
     }
 
     public double getCost() {
@@ -65,23 +63,67 @@ public class Item implements Serializable {
         this.quantity = quantity;
     }
 
-    public String getEffects() {
-        return effects;
+    public boolean getOwned() {
+        return owned;
     }
 
-    public void setEffects(String effects) {
-        this.effects = effects;
+    public void setOwned(boolean owned) {
+        this.owned = owned;
+    }
+
+    public int getHackingLevel() {
+        return hackingLevel;
+    }
+
+    public void setHackingLevel(int hackingLevel) {
+        this.hackingLevel = hackingLevel;
+    }
+
+    public int getSocialLevel() {
+        return socialLevel;
+    }
+
+    public void setSocialLevel(int socialLevel) {
+        this.socialLevel = socialLevel;
+    }
+
+    public int getPrecisionLevel() {
+        return precisionLevel;
+    }
+
+    public void setPrecisionLevel(int precisionLevel) {
+        this.precisionLevel = precisionLevel;
+    }
+
+    public int getSpeedLevel() {
+        return speedLevel;
+    }
+
+    public void setSpeedLevel(int speedLevel) {
+        this.speedLevel = speedLevel;
+    }
+
+    public int getStealthLevel() {
+        return stealthLevel;
+    }
+
+    public void setStealthLevel(int stealthLevel) {
+        this.stealthLevel = stealthLevel;
     }
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + Objects.hashCode(this.description);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.value) ^ (Double.doubleToLongBits(this.value) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.cost) ^ (Double.doubleToLongBits(this.cost) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.quantity) ^ (Double.doubleToLongBits(this.quantity) >>> 32));
-        hash = 37 * hash + Objects.hashCode(this.effects);
+        int hash = 7;
+        hash = 23 * hash + Objects.hashCode(this.name);
+        hash = 23 * hash + Objects.hashCode(this.description);
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.cost) ^ (Double.doubleToLongBits(this.cost) >>> 32));
+        hash = 23 * hash + (int) (Double.doubleToLongBits(this.quantity) ^ (Double.doubleToLongBits(this.quantity) >>> 32));
+        hash = 23 * hash + (this.owned ? 1 : 0);
+        hash = 23 * hash + this.hackingLevel;
+        hash = 23 * hash + this.socialLevel;
+        hash = 23 * hash + this.precisionLevel;
+        hash = 23 * hash + this.speedLevel;
+        hash = 23 * hash + this.stealthLevel;
         return hash;
     }
 
@@ -97,13 +139,28 @@ public class Item implements Serializable {
             return false;
         }
         final Item other = (Item) obj;
-        if (Double.doubleToLongBits(this.value) != Double.doubleToLongBits(other.value)) {
-            return false;
-        }
         if (Double.doubleToLongBits(this.cost) != Double.doubleToLongBits(other.cost)) {
             return false;
         }
         if (Double.doubleToLongBits(this.quantity) != Double.doubleToLongBits(other.quantity)) {
+            return false;
+        }
+        if (this.owned != other.owned) {
+            return false;
+        }
+        if (this.hackingLevel != other.hackingLevel) {
+            return false;
+        }
+        if (this.socialLevel != other.socialLevel) {
+            return false;
+        }
+        if (this.precisionLevel != other.precisionLevel) {
+            return false;
+        }
+        if (this.speedLevel != other.speedLevel) {
+            return false;
+        }
+        if (this.stealthLevel != other.stealthLevel) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
@@ -112,15 +169,14 @@ public class Item implements Serializable {
         if (!Objects.equals(this.description, other.description)) {
             return false;
         }
-        if (!Objects.equals(this.effects, other.effects)) {
-            return false;
-        }
         return true;
     }
 
     @Override
     public String toString() {
-        return "Item{" + "name=" + name + ", description=" + description + ", value=" + value + ", cost=" + cost + ", quantity=" + quantity + ", effects=" + effects + '}';
+        return "Item{" + "name=" + name + ", description=" + description + ", cost=" + cost + ", quantity=" + quantity + ", owned=" + owned + ", hackingLevel=" + hackingLevel + ", socialLevel=" + socialLevel + ", precisionLevel=" + precisionLevel + ", speedLevel=" + speedLevel + ", stealthLevel=" + stealthLevel + '}';
     }
 
+   
+    
 }
