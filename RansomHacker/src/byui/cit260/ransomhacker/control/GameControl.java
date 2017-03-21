@@ -70,26 +70,7 @@ public class GameControl {
         
         
         
-        game.setPlayer(player); // save player in game
-        
-        Item item = new Item(); //create new item
-        game.setItem(item); // save the new item in game
-     
-           
-        Attack attack = new Attack();
-        game.setAttack(attack);
-        
-        Job job = new Job();
-        game.setJob(job);
-        
-        Scene scene = new Scene();
-        game.setScene(scene);
-        
-        SkillDevelopment skillDevelopment = new SkillDevelopment();
-        game.setSkillDevelopment(skillDevelopment);
-        
-        Skills skills = new Skills();
-        game.setSkills(skills);
+       
         
         Location location = new Location() {
             @Override
@@ -102,7 +83,7 @@ public class GameControl {
                 throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         };
-        game.setLocation(location);
+        character.setLocation(location);
         
     }
 
