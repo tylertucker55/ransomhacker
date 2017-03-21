@@ -19,6 +19,9 @@ public class Map implements Serializable{
           
       }
 
+    public Map(int i, int i0) {
+    }
+
     public int getRowCount() {
         return rowCount;
     }
