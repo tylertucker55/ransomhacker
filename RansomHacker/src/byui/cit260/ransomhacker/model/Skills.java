@@ -12,22 +12,24 @@ import java.util.Objects;
  *
  * @author 50mm3r
  */
-public class Skills implements Serializable {
+public enum Skills implements Serializable {
     
-    private String name;
-    private String description;
-    private int level;
+    Hacking("Allows you to execute more complex hacks", "Hacking"),
+    Speed("Allows you to execute your attacks faster", "Speed"),
+    Stealth("Lowers the rate of detection caused by your attacks", "Stealth"),
+    Social("Allows you to execute social engineering attacks", "Social"),
+    Precision("Increases your chance of success on your attacks","Precision:");
     
-    public Skills() {
-        
+    private final String name;
+    private final String description;
+    
+    Skills (String description, String name) {
+        this.description = description;
+        this.name = name;
     }
 
     public String getName() {
         return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getDescription() {
