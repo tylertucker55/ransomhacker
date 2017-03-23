@@ -50,9 +50,12 @@ public class RelocationView extends View {
                 + "The name must be the same as the city on the list");
             return false;
             }    
-       //Disabled until working....
-       // else 
-         //  RelocationControl.calcMoveCost();
+       
+        // ???
+        //else 
+          //  private void RelocationControl.calcMoveCost() {
+                
+          //  };
         
         boolean result = RelocationControl.moveChar(cityName);
             

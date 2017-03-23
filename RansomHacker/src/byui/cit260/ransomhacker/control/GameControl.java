@@ -50,6 +50,7 @@ public class GameControl {
         GameControl.character.setMoneyLeft(10000000);
         GameControl.character.setTimesMoved(0);
         
+        
         Game game = new Game();
         RansomHacker.setCurrentGame(game);
         

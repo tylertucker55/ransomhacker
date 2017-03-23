@@ -23,9 +23,10 @@ public class Scene implements Serializable {
     private String symbol;
     
     
+    
     public Scene(){
         this.jobs = new ArrayList<>();
-        this.itemsAvailable = new ArrayList<>();
+        this.itemsAvailable = new ArrayList<Store>();
         this.courses = new ArrayList<>();
     }
 
