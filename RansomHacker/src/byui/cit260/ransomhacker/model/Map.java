@@ -14,11 +14,103 @@ public class Map implements Serializable{
     
     private int rowCount;
     private int columnCount;
+    public Location[][] locations;
+    
 
       public Map() {
-          
       }
 
+      public Map(int noOfRows, int noOfColumns) {
+          
+          if (rowCount < 1 || columnCount < 1) {
+              System.out.println("The number of rows and columns must be > zero");
+              return;
+          }
+          
+          this.rowCount = rowCount;
+          this.columnCount = columnCount;
+          
+          this.locations = new Location[rowCount][columnCount];
+          
+          for(int row = 0; row < rowCount; row++) {
+              for(int column = 0; column < columnCount; column++) {
+                Location location = new Location();
+                location.setColumn(column);
+                location.setRow(row);
+                location.setVisited(false);
+                
+                locations[row][column] = location;
+                  
+                  /*
+                Location.Seattle.getCoordinates();
+                Location.Portland.getCoordinates();
+                Location.Oakland.getCoordinates();
+                Location.LosAngeles.getCoordinates();
+                Location.SanDeigo.getCoordinates();
+                Location.Spokane.getCoordinates();
+                Location.Rexburg.getCoordinates();
+                Location.SaltLakeCity.getCoordinates();
+                Location.LasVegas.getCoordinates();
+                Location.Phoenix.getCoordinates();
+                Location.Helena.getCoordinates();
+                Location.Cheyenne.getCoordinates();
+                Location.Denver.getCoordinates();
+                Location.Albuquerque.getCoordinates();
+                Location.Lubbock.getCoordinates();
+                Location.ElPaso.getCoordinates();
+                Location.Bismark.getCoordinates();
+                Location.RapidCity.getCoordinates();
+                Location.KansasCity.getCoordinates();
+                Location.Amarillo.getCoordinates();
+                Location.Austin.getCoordinates();
+                Location.SanAntonio.getCoordinates();
+                Location.McAllen.getCoordinates();
+                Location.Minneapolis.getCoordinates();
+                Location.DesMoines.getCoordinates();
+                Location.StLouis.getCoordinates();
+                Location.Tulsa.getCoordinates();
+                Location.Dallas.getCoordinates();
+                Location.Houston.getCoordinates();
+                Location.Milwaukee.getCoordinates();
+                Location.Chicago.getCoordinates();
+                Location.Indianapolis.getCoordinates();
+                Location.LittleRock.getCoordinates();
+                Location.BatonRouge.getCoordinates();
+                Location.NewOrleans.getCoordinates();
+                Location.Detroit.getCoordinates();
+                Location.Cleveland.getCoordinates();
+                Location.Cincinnati.getCoordinates();
+                Location.Louisville.getCoordinates();
+                Location.Nashville.getCoordinates();
+                Location.Jackson.getCoordinates();
+                Location.NewYork.getCoordinates();
+                Location.Philidelphia.getCoordinates();
+                Location.Baltimore.getCoordinates();
+                Location.Richmond.getCoordinates();
+                Location.Knoxville.getCoordinates();
+                Location.Montgomery.getCoordinates();
+                Location.Boston.getCoordinates();
+                Location.Trenton.getCoordinates();
+                Location.WashingtonDC.getCoordinates();
+                Location.Raleigh.getCoordinates();
+                Location.Charleston.getCoordinates();
+                Location.Atlanta.getCoordinates();
+                Location.Miami.getCoordinates();
+                  */
+              }
+          }
+      }
+      
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+      
+      
     public int getRowCount() {
         return rowCount;
     }
