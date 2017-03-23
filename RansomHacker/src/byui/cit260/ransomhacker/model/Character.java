@@ -6,6 +6,7 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -26,7 +27,7 @@ private double detection;
 private double moneyLeft;
 private int timesMoved;
 
-private Item[] inventory;
+private ArrayList<Item> inventory;
 private Skills[] skillLevels; 
   
 public Character() {
@@ -50,11 +51,11 @@ public Character() {
         this.player = player;
     }
 
-    public Item[] getInventory() {
+    public ArrayList<Item> getInventory() {
         return inventory;
     }
 
-    public void setInventory(Item[] inventory) {
+    public void setInventory(ArrayList<Item> inventory) {
         this.inventory = inventory;
     }
 
@@ -142,7 +143,6 @@ public Character() {
         hash = 37 * hash + this.daysLeft;
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.detection) ^ (Double.doubleToLongBits(this.detection) >>> 32));
         hash = 37 * hash + (int) (Double.doubleToLongBits(this.moneyLeft) ^ (Double.doubleToLongBits(this.moneyLeft) >>> 32));
-        hash = 37 * hash + Arrays.deepHashCode(this.inventory);
         hash = 37 * hash + Arrays.deepHashCode(this.skillLevels);
         return hash;
     }
@@ -186,9 +186,7 @@ public Character() {
         if (this.location != other.location) {
             return false;
         }
-        if (!Arrays.deepEquals(this.inventory, other.inventory)) {
-            return false;
-        }
+       
         if (!Arrays.deepEquals(this.skillLevels, other.skillLevels)) {
             return false;
         }
@@ -198,6 +196,10 @@ public Character() {
     @Override
     public String toString() {
         return "Character{" + "name=" + name + ", player=" + player + ", game=" + game + ", location=" + location + ", items=" + items + ", money=" + money + ", daysLeft=" + daysLeft + ", detection=" + detection + ", moneyLeft=" + moneyLeft + ", inventory=" + inventory + ", skillLevels=" + skillLevels + '}';
+    }
+
+    public void setInventory(Item[] inventory) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     
