@@ -73,17 +73,7 @@ public class GameControl {
         
        
         
-        Location location = new Location() {
-            @Override
-            public String getName() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-
-            @Override
-            public boolean isOutputLocation() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        };
+        Location location = new Location();
         character.setLocation(location);
         
     }
