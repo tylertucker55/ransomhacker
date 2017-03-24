@@ -111,8 +111,6 @@ public class GameMenuView extends View {
 
     private void displayPayRansom() {
         System.out.println("displayPayRansom() Called");
-        PayRansomView payRansomView = new PayRansomView();
-        payRansomView.display();
     }
 
     private void displaySaveGame() {
@@ -195,4 +193,4 @@ public class GameMenuView extends View {
     
     
 }
-    
+   

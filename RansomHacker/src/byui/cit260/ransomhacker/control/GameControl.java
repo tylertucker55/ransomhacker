@@ -5,7 +5,6 @@
  */
 package byui.cit260.ransomhacker.control;
 
-import byui.cit260.ransomhacker.model.Attack;
 import byui.cit260.ransomhacker.model.Character;
 import byui.cit260.ransomhacker.model.Game;
 import byui.cit260.ransomhacker.model.Item;
@@ -14,13 +13,7 @@ import byui.cit260.ransomhacker.model.Map;
 import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.model.Skills;
 import ransomhacker.RansomHacker;
-import byui.cit260.ransomhacker.model.Game;
-import byui.cit260.ransomhacker.model.Item;
-import byui.cit260.ransomhacker.model.Job;
-import byui.cit260.ransomhacker.model.Map;
-import byui.cit260.ransomhacker.model.Scene;
-import byui.cit260.ransomhacker.model.SkillDevelopment;
-import byui.cit260.ransomhacker.model.Skills;
+
 /**
  *
  * @author 50mm3r
@@ -68,14 +61,6 @@ public class GameControl {
         
         
         System.out.println("\n*** createNewGame stub function called***");
-        
-        
-        
-       
-        
-        Location location = new Location();
-        character.setLocation(location);
-        
     }
 
     public static boolean LoadGame(String input) {
