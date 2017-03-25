@@ -195,54 +195,6 @@ public class GameControl {
         ;
     }
     
-    public static Skills[] createSkillsList() {
-        Skills[] skillLevels;
-        skillLevels = new Skills[5];
-        
-        Skills hackingLevel = new Skills();
-        hackingLevel.setName("Hacking Level");
-        hackingLevel.setDescription("Level of expertise carrying out software exploits");
-        hackingLevel.setLevel(1);
-        skillLevels[SkillNames.hacking.ordinal()] = hackingLevel;
-        
-        Skills socialLevel = new Skills();
-        socialLevel.setName("Social Engineering Level");
-        socialLevel.setDescription("Level of expertise carrying out social engineering attacks");
-        socialLevel.setLevel(1);
-        skillLevels[SkillNames.social.ordinal()] = socialLevel;
-        
-        Skills stealthLevel = new Skills();
-        stealthLevel.setName("Stealth Level");
-        stealthLevel.setDescription("Ability to avoid detection while carrying out attacks,"
-                + "each level lowers detection by 5%");
-        stealthLevel.setLevel(0);
-        skillLevels[SkillNames.stealth.ordinal()] = stealthLevel;
-        
-        Skills precisionLevel = new Skills();
-        precisionLevel.setName("Precision Level");
-        precisionLevel.setDescription("Ability to execute attacks more successfully, "
-                + "each level increases chance of success by 5%");
-        precisionLevel.setLevel(0);
-        skillLevels[SkillNames.precision.ordinal()] = precisionLevel;
-        
-        Skills speedLevel = new Skills();
-        speedLevel.setName("Speed Level");
-        speedLevel.setDescription("Ability to carry out attacks more quickly, "
-                + "each level decreases the time cost by 1 day");
-        speedLevel.setLevel(0);
-        skillLevels[SkillNames.speed.ordinal()] = speedLevel;
-                
-                
-        return skillLevels;
-        
-    }
-    
-    public enum SkillNames {
-        hacking,
-        social,
-        stealth,
-        precision,
-        speed;
-    }
+   
     
 }

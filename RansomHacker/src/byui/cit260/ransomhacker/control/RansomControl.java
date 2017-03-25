@@ -5,24 +5,27 @@
  */
 package byui.cit260.ransomhacker.control;
 
+import byui.cit260.ransomhacker.exceptions.RansomControlException;
+
 /**
  *
  * @author 50mm3r
  */
 public class RansomControl {
     
-    public double addDays( double amountPaid, int daysLeft) {
+    public double addDays( double amountPaid, int daysLeft) throws RansomControlException {
     
     
 
-if (amountPaid < 10000) { //amount paid is less than 10k?
-	return -1;
-    }            
-if (daysLeft < 1) {  
-	return -1;
-    }
-int newDaysLeft = (int)(Math.round(amountPaid / 10000)) + daysLeft;
-return newDaysLeft;
+        if (amountPaid < 10000) { //amount paid is less than 10k?
+	throw new RansomControlException("Amount payed must be less than 10k");
+        }            
+        if (daysLeft < 1) {  
+	throw new RansomControlException("The number of days left must be over one");
+        }
+        int newDaysLeft = (int)(Math.round(amountPaid / 10000)) + daysLeft;
+        newDaysLeft = daysLeft;
+         return daysLeft;
 
     }
     
