@@ -229,18 +229,15 @@ public class Location implements Serializable {
     private final Point coordinates;
     private final String symbol;
     private final int size;
-
     Location(int size, String symbol, int row, int column) {
     this.coordinates = new Point(row, column);
     this.symbol = symbol;
     this.size = size;
 }
-
     
     public Point getCoordinates() {
         return coordinates;
     }
-
     public String getSymbol() {
         return symbol;
     }
