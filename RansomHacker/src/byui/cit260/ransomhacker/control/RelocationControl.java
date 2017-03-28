@@ -9,59 +9,61 @@ import byui.cit260.ransomhacker.model.Character;
 import byui.cit260.ransomhacker.control.GameControl;
 import byui.cit260.ransomhacker.model.Location;
 import java.awt.Point;
+import java.io.Serializable;
+import byui.cit260.ransomhacker.model.Scene;
 
 /**
  *
  * @author 50mm3r
  */
-public class RelocationControl {    
-    
-    public double calcMoveCost() {
-        //No clue what this does, but without it there are errors
-        Character move = new Character();
-        //All Values set to 0 until I figure out what the heck static means
-        //Trying to set the currentcoord values to the players location
-        //And to set new coord to the values of the players city selection
-        int timesMoved = 0;
-        double currentCoordX = 0;
-        double currentCoordY = 0;
-        double newCoordX = 0; 
-        double newCoordY = 0;
-        
-        double distance = Point.distance(newCoordX, currentCoordX, newCoordY, currentCoordY);
-         if (distance == 0) {
-            return -1;
+public class RelocationControl implements Serializable {
+
+    public static boolean calcMoveCost(Character character, Point cityLocation) {
+        //Check Inputs
+        if (character == null) {
+            return false;
         }
-        
+        if (cityLocation.x > 7 || cityLocation.y > 9) {
+            return false;
+        }
+        //Declare Variables
+        Point charLocation = character.getCharLocation();
+        int timesMoved = character.getTimesMoved();
+        //Calc distance
+        double distance = Point.distance(charLocation.x, cityLocation.x, charLocation.y, cityLocation.y);
+        //Check distance 
+        if (distance == 0) {
+            return false;
+        }
+        //Calc Move Cost
         double moveCost;
         moveCost = (distance * 100) + (timesMoved * 100);
-        
+
         //Checks Money
         double money = GameControl.character.getMoney();
-            if (money < moveCost) {
-                return -1;
-            } 
-        //Subtracts cost of move from the character
-            else GameControl.character.setMoney(money - moveCost);
+        if (money < moveCost) {
+            return false;
+        } //Subtracts cost of move from the character
+        else {
+            GameControl.character.setMoney(money - moveCost);
+        }
+
+        //Lowers Detection
+        double detection = character.getDetection();
+        double newDetection = detection - (distance * 10);
+        //Subtracts detection from the character
+        GameControl.character.setDetection(newDetection);
+
         //Adds one to the Move counter
-                 timesMoved = move.getTimesMoved();
-                 GameControl.character.setTimesMoved(timesMoved++);
-        
-        
-        return moveCost;
-    }
-        //Moves Character
-    public static boolean moveChar(String cityName) {
-       // GameControl.character.setLocation(Location.valueOf(cityName));
+        character.setTimesMoved(timesMoved++);
         return true;
-        
-    } 
+    }
+    //Moves Character
 
-  
+    public static boolean moveChar(String cityName) {
+        GameControl.character.setCharLocation(Scene.valueOf(cityName).getCoordinates());
+        return true;
 
-   
- 
-    
-    
-    
+    }
+
 }

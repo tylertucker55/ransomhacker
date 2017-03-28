@@ -5,6 +5,10 @@
  */
 package byui.cit260.ransomhacker.control;
 
+import byui.cit260.ransomhacker.model.Item;
+import java.util.ArrayList;
+import ransomhacker.RansomHacker;
+
 /**
  *
  * @author 50mm3r
@@ -14,5 +18,15 @@ public class InventoryControl {
     public static void DisplayInventory() {
         
     }
+    
+    public double totalCost(ArrayList<Item> inventory) {
+    
+        double total = 0;
+        for (int index = 0; index < inventory.size(); index++) {
+            total = total + inventory.; //How to reference the cost variable here?
+        }
+        
+    return total;
+}
     
 }

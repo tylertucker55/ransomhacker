@@ -5,17 +5,34 @@
  */
 package byui.cit260.ransomhacker.view;
 
+import byui.cit260.ransomhacker.control.RansomControl;
+import ransomhacker.RansomHacker;
+
 /**
  *
- * @author Hansen
+ * @author User
  */
 public class PayRansomView extends View {
 
+    public PayRansomView() {
+        super("\nEnter the amount of the ransom you wish to pay off:");
+    }
+
     @Override
     public boolean doAction(String value) {
+        if (value.length() < 1) {
+            
+                System.out.println("You must pay more than $0.00");
+                return false;
+        }
+            else {
+        int daysLeft = RansomHacker.getCurrentGame().getCharacter().getDaysLeft();
+        double amountPaid = RansomHacker.getCurrentGame().getCharacter().getAmountPaid();
+        RansomControl.addDays(daysLeft, amountPaid);
+        return true;
+                    }
+
         
-        System.out.println("\n*** This stub function has been called***");
-        return false;
     }
     
 }

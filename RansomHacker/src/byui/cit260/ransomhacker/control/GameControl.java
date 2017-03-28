@@ -11,7 +11,9 @@ import byui.cit260.ransomhacker.model.Item;
 import byui.cit260.ransomhacker.model.Location;
 import byui.cit260.ransomhacker.model.Map;
 import byui.cit260.ransomhacker.model.Player;
-import byui.cit260.ransomhacker.model.Skills;
+import byui.cit260.ransomhacker.model.Scene;
+import byui.cit260.ransomhacker.model.Skill;
+import java.util.ArrayList;
 import ransomhacker.RansomHacker;
 
 /**
@@ -36,58 +38,66 @@ public class GameControl {
     }
 
     public static void createNewGame(Player player) {
+        
+        
+        //Initialize Game
+        Game game = new Game();
+        RansomHacker.setCurrentGame(game);
+        
+        //Initialize Player
+        character.setPlayer(player);
+        //Set Starting Location
+        character.setCharLocation(Scene.Rexburg.getCoordinates());
+        
+        //Create Player and Initialize starting attributes
         GameControl.character = new Character();
         GameControl.character.setDaysLeft(90);
         GameControl.character.setDetection(0);
         GameControl.character.setMoney(1000);
         GameControl.character.setMoneyLeft(10000000);
         GameControl.character.setTimesMoved(0);
+        GameControl.character.setHackingLevel(1);
         
-        
-        Game game = new Game();
-        RansomHacker.setCurrentGame(game);
-        
-        character.setPlayer(player);
-        //character.setLocation();
-        
+        //Initialize Beginner Inventory
         Item[] inventory = GameControl.createInventoryList();
-        character.setInventory(inventory);
+        game.setItems(inventory);
         
-        Skills[] skillLevels = GameControl.createSkillsList();
-        character.setSkillLevels(skillLevels);
+        character.getInventory().add(inventory[Items.computer.ordinal()]);
+        character.getInventory().add(inventory[Items.beginnerhackingsoftware.ordinal()]);
         
+        
+        //Create Map
         Map map = ViewMapControl.createMap();
         game.setMap(map);
         
         
-        System.out.println("\n*** createNewGame stub function called***");
+     
     }
 
     public static boolean LoadGame(String input) {
         System.out.println("\n*** loadGame stub function called***");
         return true;
     }
-
+    //Create Game Items
     public static Item[] createInventoryList() {
-        Item[] inventory;
-        inventory = new Item[12];
+        Item[] inventory = new Item[12];
         Item computer = new Item();
+        inventory[Items.computer.ordinal()] = computer;
         computer.setName("Computer");
         computer.setDescription("A basic computer, can be used to launch basic attacks");
         computer.setQuantity(1);
-        computer.setCost(0);
+        computer.setCost(500);
         computer.setOwned(true);
         computer.setHackingLevel(0);
-        inventory[Items.computer.ordinal()] = computer;
         
         Item wificard = new Item();
+        inventory[Items.wificard.ordinal()] = wificard;
         wificard.setName("Wireless Card");
         wificard.setDescription("A wireless adapter that supports packet injection,"
                 + " can be used to launch wireless attacks");
         wificard.setCost(100);
         wificard.setOwned(false);
         wificard.setQuantity(0);
-        inventory[Items.wificard.ordinal()] = wificard;
         
         Item emailserver = new Item();
         emailserver.setName("Email Server");
@@ -144,7 +154,7 @@ public class GameControl {
         Item beginnerhackingsoftware = new Item();
         beginnerhackingsoftware.setName("Hacking Software: Beginner");
         beginnerhackingsoftware.setDescription("A free suite of hacking Tools for basic attacks");
-        beginnerhackingsoftware.setCost(0);
+        beginnerhackingsoftware.setCost(50);
         beginnerhackingsoftware.setOwned(true);
         inventory[Items.beginnerhackingsoftware.ordinal()] = beginnerhackingsoftware;
         

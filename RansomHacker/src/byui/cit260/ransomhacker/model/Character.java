@@ -5,6 +5,7 @@
  */
 package byui.cit260.ransomhacker.model;
 
+import java.awt.Point;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,20 +20,83 @@ public class Character implements Serializable {
 private String name;
 private Player player;
 private Game game;
-private Location location;
+public Point charLocation;
 private String items;
 private double money;
 private int daysLeft;
 private double detection;
 private double moneyLeft;
+private double amountPaid;
 private int timesMoved;
+private int hackingLevel;
+private int socialLevel;
+private int precisionLevel;
+private int speedLevel;
+private int stealthLevel;
 
 private ArrayList<Item> inventory;
-private Skills[] skillLevels; 
+private Skill[] skillLevels; 
   
 public Character() {
     
 }
+
+    public int getHackingLevel() {
+        return hackingLevel;
+    }
+
+    public void setHackingLevel(int hackingLevel) {
+        this.hackingLevel = hackingLevel;
+    }
+
+    public int getSocialLevel() {
+        return socialLevel;
+    }
+
+    public void setSocialLevel(int socialLevel) {
+        this.socialLevel = socialLevel;
+    }
+
+    public int getPrecisionLevel() {
+        return precisionLevel;
+    }
+
+    public void setPrecisionLevel(int precisionLevel) {
+        this.precisionLevel = precisionLevel;
+    }
+
+    public int getSpeedLevel() {
+        return speedLevel;
+    }
+
+    public void setSpeedLevel(int speedLevel) {
+        this.speedLevel = speedLevel;
+    }
+
+    public int getStealthLevel() {
+        return stealthLevel;
+    }
+
+    public void setStealthLevel(int stealthLevel) {
+        this.stealthLevel = stealthLevel;
+    }
+
+    public double getAmountPaid() {
+        return amountPaid;
+    }
+
+    public void setAmountPaid(double amountPaid) {
+        this.amountPaid = amountPaid;
+    }
+    
+    public Point getCharLocation() {
+        return charLocation;
+    }
+
+    public void setCharLocation(Point charLocation) {
+        this.charLocation = charLocation;
+    }
+    
 
     public int getTimesMoved() {
         return timesMoved;
@@ -75,14 +139,6 @@ public Character() {
         this.game = game;
     }
 
-    public Location getLocation() {
-        return location;
-    }
-
-    public void setLocation(Location location) {
-        this.location = location;
-    }
-
     public String getItems() {
         return items;
     }
@@ -123,84 +179,12 @@ public Character() {
         this.moneyLeft = moneyLeft;
     }
 
-    public Skills[] getSkillLevels() {
+    public Skill[] getSkillLevels() {
         return skillLevels;
     }
 
-    public void setSkillLevels(Skills[] skillLevels) {
+    public void setSkillLevels(Skill[] skillLevels) {
         this.skillLevels = skillLevels;
     }
-
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        hash = 37 * hash + Objects.hashCode(this.name);
-        hash = 37 * hash + Objects.hashCode(this.player);
-        hash = 37 * hash + Objects.hashCode(this.game);
-        hash = 37 * hash + Objects.hashCode(this.location);
-        hash = 37 * hash + Objects.hashCode(this.items);
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.money) ^ (Double.doubleToLongBits(this.money) >>> 32));
-        hash = 37 * hash + this.daysLeft;
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.detection) ^ (Double.doubleToLongBits(this.detection) >>> 32));
-        hash = 37 * hash + (int) (Double.doubleToLongBits(this.moneyLeft) ^ (Double.doubleToLongBits(this.moneyLeft) >>> 32));
-        hash = 37 * hash + Arrays.deepHashCode(this.skillLevels);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        final Character other = (Character) obj;
-        if (Double.doubleToLongBits(this.money) != Double.doubleToLongBits(other.money)) {
-            return false;
-        }
-        if (this.daysLeft != other.daysLeft) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.detection) != Double.doubleToLongBits(other.detection)) {
-            return false;
-        }
-        if (Double.doubleToLongBits(this.moneyLeft) != Double.doubleToLongBits(other.moneyLeft)) {
-            return false;
-        }
-        if (!Objects.equals(this.name, other.name)) {
-            return false;
-        }
-        if (!Objects.equals(this.items, other.items)) {
-            return false;
-        }
-        if (!Objects.equals(this.player, other.player)) {
-            return false;
-        }
-        if (!Objects.equals(this.game, other.game)) {
-            return false;
-        }
-        if (this.location != other.location) {
-            return false;
-        }
-       
-        if (!Arrays.deepEquals(this.skillLevels, other.skillLevels)) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "Character{" + "name=" + name + ", player=" + player + ", game=" + game + ", location=" + location + ", items=" + items + ", money=" + money + ", daysLeft=" + daysLeft + ", detection=" + detection + ", moneyLeft=" + moneyLeft + ", inventory=" + inventory + ", skillLevels=" + skillLevels + '}';
-    }
-
-    public void setInventory(Item[] inventory) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     
 }

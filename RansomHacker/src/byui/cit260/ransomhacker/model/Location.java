@@ -22,7 +22,20 @@ public class Location implements Serializable {
     private boolean visited;        
     private Scene scene;
     private Character character;
+    private Item[] items;
+    
+    public Location() {};
 
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+
+    
+    
     public String getName() {
         return name;
     }
