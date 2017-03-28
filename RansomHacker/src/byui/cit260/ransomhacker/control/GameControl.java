@@ -11,7 +11,8 @@ import byui.cit260.ransomhacker.model.Item;
 import byui.cit260.ransomhacker.model.Location;
 import byui.cit260.ransomhacker.model.Map;
 import byui.cit260.ransomhacker.model.Player;
-import byui.cit260.ransomhacker.model.Skills;
+import byui.cit260.ransomhacker.model.Skill;
+import java.util.ArrayList;
 import ransomhacker.RansomHacker;
 
 /**
@@ -51,10 +52,12 @@ public class GameControl {
         //character.setLocation();
         
         Item[] inventory = GameControl.createInventoryList();
-        character.setInventory(inventory);
+        game.setItems(inventory);
         
-        Skills[] skillLevels = GameControl.createSkillsList();
-        character.setSkillLevels(skillLevels);
+        character.getInventory().add(inventory[Items.computer.ordinal()]);
+        character.getInventory().add(inventory[Items.beginnerhackingsoftware.ordinal()]);
+        
+        
         
         Map map = ViewMapControl.createMap();
         game.setMap(map);
@@ -69,16 +72,15 @@ public class GameControl {
     }
 
     public static Item[] createInventoryList() {
-        Item[] inventory;
-        inventory = new Item[12];
+        Item[] inventory = new Item[12];
         Item computer = new Item();
+        inventory[Items.computer.ordinal()] = computer;
         computer.setName("Computer");
         computer.setDescription("A basic computer, can be used to launch basic attacks");
         computer.setQuantity(1);
         computer.setCost(0);
         computer.setOwned(true);
         computer.setHackingLevel(0);
-        inventory[Items.computer.ordinal()] = computer;
         
         Item wificard = new Item();
         wificard.setName("Wireless Card");
@@ -87,7 +89,6 @@ public class GameControl {
         wificard.setCost(100);
         wificard.setOwned(false);
         wificard.setQuantity(0);
-        inventory[Items.wificard.ordinal()] = wificard;
         
         Item emailserver = new Item();
         emailserver.setName("Email Server");
@@ -195,54 +196,6 @@ public class GameControl {
         ;
     }
     
-    public static Skills[] createSkillsList() {
-        Skills[] skillLevels;
-        skillLevels = new Skills[5];
-        
-        Skills hackingLevel = new Skills();
-        hackingLevel.setName("Hacking Level");
-        hackingLevel.setDescription("Level of expertise carrying out software exploits");
-        hackingLevel.setLevel(1);
-        skillLevels[SkillNames.hacking.ordinal()] = hackingLevel;
-        
-        Skills socialLevel = new Skills();
-        socialLevel.setName("Social Engineering Level");
-        socialLevel.setDescription("Level of expertise carrying out social engineering attacks");
-        socialLevel.setLevel(1);
-        skillLevels[SkillNames.social.ordinal()] = socialLevel;
-        
-        Skills stealthLevel = new Skills();
-        stealthLevel.setName("Stealth Level");
-        stealthLevel.setDescription("Ability to avoid detection while carrying out attacks,"
-                + "each level lowers detection by 5%");
-        stealthLevel.setLevel(0);
-        skillLevels[SkillNames.stealth.ordinal()] = stealthLevel;
-        
-        Skills precisionLevel = new Skills();
-        precisionLevel.setName("Precision Level");
-        precisionLevel.setDescription("Ability to execute attacks more successfully, "
-                + "each level increases chance of success by 5%");
-        precisionLevel.setLevel(0);
-        skillLevels[SkillNames.precision.ordinal()] = precisionLevel;
-        
-        Skills speedLevel = new Skills();
-        speedLevel.setName("Speed Level");
-        speedLevel.setDescription("Ability to carry out attacks more quickly, "
-                + "each level decreases the time cost by 1 day");
-        speedLevel.setLevel(0);
-        skillLevels[SkillNames.speed.ordinal()] = speedLevel;
-                
-                
-        return skillLevels;
-        
-    }
     
-    public enum SkillNames {
-        hacking,
-        social,
-        stealth,
-        precision,
-        speed;
-    }
     
 }

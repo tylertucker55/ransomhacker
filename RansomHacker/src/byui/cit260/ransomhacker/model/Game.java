@@ -17,8 +17,10 @@ public class Game implements Serializable {
     private int daysLeft;
     private Map map;
     private Player player;
-    private  Character character;
-    ArrayList<Attack> attacks;
+    private Character character;
+    private Item[] items;
+    private Attack[] attacks;
+    private SkillDevelopment[] skills;
     
    
     
@@ -27,9 +29,34 @@ public class Game implements Serializable {
     
     public Game() {
      
-        this.attacks = new ArrayList<>();
     }
 
+    public Item[] getItems() {
+        return items;
+    }
+
+    public void setItems(Item[] items) {
+        this.items = items;
+    }
+
+    public Attack[] getAttacks() {
+        return attacks;
+    }
+
+    public void setAttacks(Attack[] attacks) {
+        this.attacks = attacks;
+    }
+
+    public SkillDevelopment[] getSkills() {
+        return skills;
+    }
+
+    public void setSkills(SkillDevelopment[] skills) {
+        this.skills = skills;
+    }
+    
+    
+    
     public Map getMap() {
         return map;
     }
@@ -53,16 +80,6 @@ public class Game implements Serializable {
     public void setCharacter(Character character) {
         this.character = character;
     }
-
-    public ArrayList<Attack> getAttacks() {
-        return attacks;
-    }
-
-    public void setAttacks(ArrayList<Attack> attacks) {
-        this.attacks = attacks;
-    }
-
-    
     
     public int getDaysLeft() {
         return daysLeft;

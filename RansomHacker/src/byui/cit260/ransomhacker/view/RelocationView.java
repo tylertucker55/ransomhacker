@@ -9,8 +9,11 @@ import byui.cit260.ransomhacker.control.GameControl;
 import byui.cit260.ransomhacker.control.RelocationControl;
 import byui.cit260.ransomhacker.model.Location;
 import byui.cit260.ransomhacker.model.Player;
+import byui.cit260.ransomhacker.model.Scene;
+import byui.cit260.ransomhacker.model.Character;
 import java.awt.Point;
 import java.util.Scanner;
+import ransomhacker.RansomHacker;
 
 /**
  *
@@ -51,13 +54,12 @@ public class RelocationView extends View {
             return false;
             }    
        
-        // ???
-        //else 
-          //  private void RelocationControl.calcMoveCost() {
-                
-          //  };
         
-        boolean result = RelocationControl.moveChar(cityName);
+        else {
+          
+        Character character = RansomHacker.getCurrentGame().getCharacter();
+        Point cityLocation = Scene.valueOf(cityName).getCoordinates();
+        boolean result = RelocationControl.calcMoveCost(character, cityLocation);
             
         return result;
             
@@ -65,7 +67,7 @@ public class RelocationView extends View {
     
         }
         
-       
+    }  
     }
     
     

@@ -11,18 +11,21 @@ package byui.cit260.ransomhacker.control;
  */
 public class RansomControl {
     
-    public double addDays( double amountPaid, int daysLeft) {
+    public boolean addDays( double amountPaid, int daysLeft) {
     
     
 
 if (amountPaid < 10000) { //amount paid is less than 10k?
-	return -1;
+	return false;
     }            
 if (daysLeft < 1) {  
-	return -1;
+	return false;
     }
 int newDaysLeft = (int)(Math.round(amountPaid / 10000)) + daysLeft;
-return newDaysLeft;
+//Add Days
+
+
+return true;
 
     }
     
