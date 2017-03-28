@@ -36,7 +36,7 @@ public class ViewMapControl {
         locations[0][0].setScene(Scene.Seattle);
         Item[] smallCites = new Item[2];
         smallCites[0] = RansomHacker.getCurrentGame().getItems()[Items.computer.ordinal()];
-        locations[0][0].setItems(item);
+        //locations[0][0].setItems(smallCities[]);
         locations[1][0].setScene(Scene.Portland);
         locations[2][0].setScene(Scene.Oakland);
         locations[3][0].setScene(Scene.LosAngeles);
