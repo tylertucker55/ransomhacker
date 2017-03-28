@@ -7,9 +7,11 @@ package byui.cit260.ransomhacker.control;
 
 import byui.cit260.ransomhacker.control.GameControl.Items;
 import byui.cit260.ransomhacker.model.Item;
+import byui.cit260.ransomhacker.model.Job;
 import byui.cit260.ransomhacker.model.Location;
 import byui.cit260.ransomhacker.model.Map;
 import byui.cit260.ransomhacker.model.Scene;
+import byui.cit260.ransomhacker.model.SkillDevelopment;
 import java.awt.Point;
 import ransomhacker.RansomHacker;
 
@@ -93,14 +95,34 @@ public class ViewMapControl {
 
     }
     
-    private void addStuffToLocations(Location[][] locations) {
+    private void initializeLocations(Location[][] locations) {
+        //create Stores
         Item[] itemList = RansomHacker.getCurrentGame().getItems();
         Item[] smallCityItems = {
             itemList[Items.computer.ordinal()],
-            itemList[Items.emailserver.ordinal()]
-        };
+            itemList[Items.emailserver.ordinal()]};
+        Item[] mediumCityItems = {};
+        Item[] largeCityItems = {};
+        Item[] hugeCityItems = {};
+        Item[] massiveCityItems = {};
         
+        //create Job Lists
+        Job[] jobList = RansomHacker.getCurrentGame().getJobs();
+        Job[] smallCityJobs = {};
+        Job[] mediumCityJobs = {};
+        Job[] largeCityJobs = {};
+        Job[] hugeCityJobs = {};
+        Job[] massiveCityJobs = {};
         
+        //create Skill Development Classes
+        SkillDevelopment[] skillsList = RansomHacker.getCurrentGame().getSkills();
+        SkillDevelopment[] smallCitySkills = {};
+        SkillDevelopment[] mediumCitySkills = {};
+        SkillDevelopment[] largeCitySkills = {};
+        SkillDevelopment[] hugeCitySkills = {};
+        SkillDevelopment[] massiveCitySkills = {};
+       
+       
         for (int row = 0; row < locations.length; row++) {
             for (int col = 0; col < locations[row].length; col++) {
                 // get size of city in scene in location

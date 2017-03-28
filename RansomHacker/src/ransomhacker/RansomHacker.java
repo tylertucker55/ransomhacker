@@ -34,9 +34,16 @@ public class RansomHacker {
     public static void main(String[] args) {
         // TODO code application logic here
         
-        StartProgramView startProgramView = new StartProgramView();
-        startProgramView.display();
         
+        StartProgramView startProgramView = new StartProgramView();
+        
+        try {
+        startProgramView.display();
+        } catch (Throwable te) {
+            System.out.println(te.getMessage());
+            te.printStackTrace();
+            startProgramView.display();
+        }
      
     }
     

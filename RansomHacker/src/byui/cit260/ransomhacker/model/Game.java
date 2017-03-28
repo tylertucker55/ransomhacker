@@ -21,6 +21,7 @@ public class Game implements Serializable {
     private Item[] items;
     private Attack[] attacks;
     private SkillDevelopment[] skills;
+    private Job[] jobs;
     
    
     
@@ -29,6 +30,14 @@ public class Game implements Serializable {
     
     public Game() {
      
+    }
+
+    public Job[] getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(Job[] jobs) {
+        this.jobs = jobs;
     }
 
     public Item[] getItems() {

@@ -6,6 +6,9 @@
 package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.RansomControl;
+import byui.cit260.ransomhacker.exceptions.RansomControlException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import ransomhacker.RansomHacker;
 
 /**
@@ -28,7 +31,13 @@ public class PayRansomView extends View {
             else {
         int daysLeft = RansomHacker.getCurrentGame().getCharacter().getDaysLeft();
         double amountPaid = RansomHacker.getCurrentGame().getCharacter().getAmountPaid();
-        RansomControl.addDays(daysLeft, amountPaid);
+        RansomControl rcontrol = new RansomControl();
+            try {
+                rcontrol.addDays(daysLeft, amountPaid); //How to fix this?
+            } catch (RansomControlException ex) {
+                System.out.println("Days not Added");
+            }
+            
         return true;
                     }
 

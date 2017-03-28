@@ -21,7 +21,6 @@ private String name;
 private Player player;
 private Game game;
 public Point charLocation;
-private String items;
 private double money;
 private int daysLeft;
 private double detection;
@@ -137,14 +136,6 @@ public Character() {
 
     public void setGame(Game game) {
         this.game = game;
-    }
-
-    public String getItems() {
-        return items;
-    }
-
-    public void setItems(String items) {
-        this.items = items;
     }
 
     public double getMoney() {

@@ -34,7 +34,8 @@ public class InventoryView extends View {
             case "1":
             {
                 ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory();
-                InventoryControl.totalCost(inventory); //How to pass the ArrayList to this method?
+                InventoryControl icontrol = new InventoryControl();
+                icontrol.totalCost(inventory); 
                 break;
             }    
             default:
