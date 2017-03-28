@@ -6,6 +6,8 @@
 package byui.cit260.ransomhacker.control;
 
 import byui.cit260.ransomhacker.exceptions.RansomControlException;
+import ransomhacker.RansomHacker;
+import byui.cit260.ransomhacker.model.Character;
 
 /**
  *
@@ -13,7 +15,7 @@ import byui.cit260.ransomhacker.exceptions.RansomControlException;
  */
 public class RansomControl {
     
-    public double addDays( double amountPaid, int daysLeft) throws RansomControlException {
+    public void addDays( double amountPaid, int daysLeft) throws RansomControlException {
     
     
 
@@ -24,8 +26,8 @@ public class RansomControl {
 	throw new RansomControlException("The number of days left must be over one");
         }
         int newDaysLeft = (int)(Math.round(amountPaid / 10000)) + daysLeft;
-        newDaysLeft = daysLeft;
-         return daysLeft;
+        RansomHacker.getCurrentGame().getCharacter().setDaysLeft(newDaysLeft);
+         
 
     }
     
