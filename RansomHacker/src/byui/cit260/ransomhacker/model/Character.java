@@ -32,8 +32,7 @@ private int socialLevel;
 private int precisionLevel;
 private int speedLevel;
 private int stealthLevel;
-
-private ArrayList<Item> inventory;
+private ArrayList<Item>  inventory = new ArrayList<>();
 private Skill[] skillLevels; 
   
 public Character() {

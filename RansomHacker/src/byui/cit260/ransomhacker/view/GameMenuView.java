@@ -7,6 +7,7 @@ package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
 import byui.cit260.ransomhacker.model.Scene;
+import ransomhacker.RansomHacker;
 
 /**
  *
@@ -16,9 +17,9 @@ public class GameMenuView extends View {
     
     
     public GameMenuView() {
-        super("\nDays until ransom is due: " + GameControl.character.getDaysLeft()
-                    + "\nFBI detection: " + GameControl.character.getDetection() + "%"
-                    + "\nMoney: $" + GameControl.character.getMoney() + "/$" + GameControl.character.getMoneyLeft()
+        super("\nDays until ransom is due: " + RansomHacker.getCurrentGame().getCharacter().getDaysLeft()
+                    + "\nFBI detection: " + RansomHacker.getCurrentGame().getCharacter().getDetection() + "%"
+                    + "\nMoney: $" + RansomHacker.getCurrentGame().getCharacter().getMoney() + "/$" + RansomHacker.getCurrentGame().getCharacter().getMoneyLeft()
                     + "\n------------------------------"
                     + "\n1 - Character Stats"
                     + "\n2 - Available Jobs"

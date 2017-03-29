@@ -60,10 +60,12 @@ public class MainMenuView extends View {
     private void newGame() {
         //create a new game
         GameControl.createNewGame(RansomHacker.getPlayer());
+        GameMenuView gameMenu = new GameMenuView();
+        GameControl.createNewGame(RansomHacker.getPlayer());
         //create a new game Menu view
         
         //Display the game menu
-        GameMenuView gameMenu = new GameMenuView();
+        
         gameMenu.display();
     }
 

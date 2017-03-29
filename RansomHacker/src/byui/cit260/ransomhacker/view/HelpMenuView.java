@@ -5,8 +5,6 @@
  */
 package byui.cit260.ransomhacker.view;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Hansen
@@ -33,6 +31,7 @@ public class HelpMenuView extends View {
     }
     
 
+    @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         

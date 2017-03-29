@@ -40,19 +40,19 @@ public class RelocationControl implements Serializable {
         moveCost = (distance * 100) + (timesMoved * 100);
 
         //Checks Money
-        double money = GameControl.character.getMoney();
+        double money = character.getMoney();
         if (money < moveCost) {
             return false;
         } //Subtracts cost of move from the character
         else {
-            GameControl.character.setMoney(money - moveCost);
+            character.setMoney(money - moveCost);
         }
 
         //Lowers Detection
         double detection = character.getDetection();
         double newDetection = detection - (distance * 10);
         //Subtracts detection from the character
-        GameControl.character.setDetection(newDetection);
+        character.setDetection(newDetection);
 
         //Adds one to the Move counter
         character.setTimesMoved(timesMoved++);
@@ -60,8 +60,8 @@ public class RelocationControl implements Serializable {
     }
     //Moves Character
 
-    public static boolean moveChar(String cityName) {
-        GameControl.character.setCharLocation(Scene.valueOf(cityName).getCoordinates());
+    public static boolean moveChar(String cityName, Character character) {
+        character.setCharLocation(Scene.valueOf(cityName).getCoordinates());
         return true;
 
     }

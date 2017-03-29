@@ -22,7 +22,6 @@ import ransomhacker.RansomHacker;
  */
 public class GameControl {
 
-    public static Character character;
     
     
     public static Player createPlayer(String name) {
@@ -45,22 +44,27 @@ public class GameControl {
         RansomHacker.setCurrentGame(game);
         
         //Initialize Player
+        Character character = new Character();
+        
         character.setPlayer(player);
         //Set Starting Location
         character.setCharLocation(Scene.Rexburg.getCoordinates());
         
         //Create Player and Initialize starting attributes
-        GameControl.character = new Character();
-        GameControl.character.setDaysLeft(90);
-        GameControl.character.setDetection(0);
-        GameControl.character.setMoney(1000);
-        GameControl.character.setMoneyLeft(10000000);
-        GameControl.character.setTimesMoved(0);
-        GameControl.character.setHackingLevel(1);
+        character = new Character();
+        character.setDaysLeft(90);
+        character.setDetection(0);
+        character.setMoney(1000);
+        character.setMoneyLeft(10000000);
+        character.setTimesMoved(0);
+        character.setHackingLevel(1);
+        
+        game.setCharacter(character);
         
         //Initialize Beginner Inventory
         Item[] inventory = GameControl.createInventoryList();
         game.setItems(inventory);
+        
         
         character.getInventory().add(inventory[Items.computer.ordinal()]);
         character.getInventory().add(inventory[Items.beginnerhackingsoftware.ordinal()]);
