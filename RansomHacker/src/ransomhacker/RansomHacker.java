@@ -33,6 +33,16 @@ public class RansomHacker {
 
     private static PrintWriter outFile = null;
     private static BufferedReader inFile = null;
+    
+    private static PrintWriter logFile = null;
+
+    public static PrintWriter getLogFile() {
+        return logFile;
+    }
+
+    public static void setLogFile(PrintWriter logFile) {
+        RansomHacker.logFile = logFile;
+    }
 
     public static PrintWriter getOutFile() {
         return outFile;
@@ -63,6 +73,9 @@ public class RansomHacker {
         try {
             RansomHacker.inFile = new BufferedReader(new InputStreamReader(System.in));
             RansomHacker.outFile = new PrintWriter(System.out, true);
+            
+            String filePath = "log.txt";
+            RansomHacker.logFile = new PrintWriter(filePath);
         startProgramView.display();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
