@@ -9,6 +9,12 @@ import byui.cit260.ransomhacker.model.Game;
 import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.view.SaveGameView;
 import byui.cit260.ransomhacker.view.StartProgramView;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
        
@@ -25,7 +31,24 @@ public class RansomHacker {
     private static Game currentGame = null;
     private static Player player = null;
 
-   
+    private static PrintWriter outFile = null;
+    private static BufferedReader inFile = null;
+
+    public static PrintWriter getOutFile() {
+        return outFile;
+    }
+
+    public static void setOutFile(PrintWriter outFile) {
+        RansomHacker.outFile = outFile;
+    }
+
+    public static BufferedReader getInFile() {
+        return inFile;
+    }
+
+    public static void setInFile(BufferedReader inFile) {
+        RansomHacker.inFile = inFile;
+    }
     
     
     /**
@@ -38,13 +61,28 @@ public class RansomHacker {
         StartProgramView startProgramView = new StartProgramView();
         
         try {
+            RansomHacker.inFile = new BufferedReader(new InputStreamReader(System.in));
+            RansomHacker.outFile = new PrintWriter(System.out, true);
         startProgramView.display();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
             startProgramView.display();
         }
-     
+      
+        finally {
+            try {
+                if (RansomHacker.inFile != null)
+                        RansomHacker.inFile.close();
+                
+                if (RansomHacker.outFile != null)
+                RansomHacker.outFile.close();
+            } catch (IOException ex) {
+                System.out.println("Error CLosing files");
+                return;
+            }
+            
+        }
     }
     
      public static Game getCurrentGame() {
@@ -62,6 +100,9 @@ public class RansomHacker {
     public static void setPlayer(Player player) {
         RansomHacker.player = player;
     }
+    
+   
+    
     
     
 }
