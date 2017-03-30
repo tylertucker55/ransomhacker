@@ -5,14 +5,17 @@
  */
 package byui.cit260.ransomhacker.control;
 
+import byui.cit260.ransomhacker.model.Attack;
 import byui.cit260.ransomhacker.model.Character;
 import byui.cit260.ransomhacker.model.Game;
 import byui.cit260.ransomhacker.model.Item;
+import byui.cit260.ransomhacker.model.Job;
 import byui.cit260.ransomhacker.model.Location;
 import byui.cit260.ransomhacker.model.Map;
 import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.model.Scene;
 import byui.cit260.ransomhacker.model.Skill;
+import byui.cit260.ransomhacker.model.SkillDevelopment;
 import java.util.ArrayList;
 import ransomhacker.RansomHacker;
 
@@ -209,6 +212,82 @@ public class GameControl {
         ;
     }
     
-   
+    public static Job[] createJobsList() {
+       Job[] joblist = new Job[8];
+        
+       Job wifiPasswords = new Job();
+       wifiPasswords.setName("Steal Wifi-Passwords");
+       wifiPasswords.setDescription("Crack local wifi passwords and sell them");
+       wifiPasswords.setPay(100);
+       
+       Job stealCreditCards = new Job();
+       stealCreditCards.setName("Steal Credit Card Numbers");
+       stealCreditCards.setDescription("Steal credit card numbers and sell them on the black market");
+       stealCreditCards.setPay(1000);
+       
+       Job crashBank = new Job();
+       crashBank.setName("Crash Bank");
+       crashBank.setDescription("Disrupt banking services for a bank's rival");
+       crashBank.setPay(50000);
+       
+       Job stealIntel = new Job();
+       stealIntel.setName("Steal valuable intel");
+       stealIntel.setDescription("Hack into a company's rival and steal valuable information");
+       stealIntel.setPay(50000);
+       
+       Job sabotageDatabase = new Job();
+       sabotageDatabase.setName("Sabotage Database");
+       sabotageDatabase.setDescription("Sabotage a valuable company database");
+       sabotageDatabase.setPay(100000);
+       
+       Job stealPasswords = new Job();
+       stealPasswords.setName("Steal Passwords");
+       stealPasswords.setDescription("Steal company log-on credentials and sell them on the black market");
+       stealPasswords.setPay(10000);
+       
+       Job setUpScam = new Job();
+       setUpScam.setName("Set up Scam");
+       setUpScam.setDescription("Set up scam using ransomware to hijack computers");
+       setUpScam.setPay(25000);
+       
+       Job robExchange = new Job();
+       robExchange.setName("Rob an Exchange");
+       robExchange.setDescription("Hack into and steal funds from an exchange");
+       robExchange.setPay(500000);
+       
+       return joblist;
+    }
     
+    public enum Jobs {
+        wifiPasswords,
+        stealCreditCards,
+        crashBank,
+        stealIntel,
+        sabotageDatabase,
+        stealPasswords,
+        setUpScam,
+        robExchange,
+        ;
+    }
+   
+    public static SkillDevelopment[] createCourseList() {
+        SkillDevelopment[] courseList = new SkillDevelopment[3];
+        
+        SkillDevelopment selfStudy = new SkillDevelopment();
+        
+        SkillDevelopment psychologyClass = new SkillDevelopment();
+        
+        SkillDevelopment hackerBootCamp = new SkillDevelopment();
+        
+  
+        return courseList;
+    }
+   
+    public enum Courses {
+        selfStudy,
+        pyschologyClass,
+        hackerBootCamp,
+        ;
+    }
 }
+

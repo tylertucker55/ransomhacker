@@ -76,7 +76,7 @@ public class RansomHacker {
             
             String filePath = "log.txt";
             RansomHacker.logFile = new PrintWriter(filePath);
-        startProgramView.display();
+            startProgramView.display();
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();

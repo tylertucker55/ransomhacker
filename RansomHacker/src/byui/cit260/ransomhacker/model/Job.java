@@ -15,7 +15,7 @@ public class Job implements Serializable {
 
     private double pay;
     private String name;
-    private String state;
+    private String description;
     
     
     
@@ -38,12 +38,12 @@ public class Job implements Serializable {
         this.name = name;
     }
 
-    public String getState() {
-        return state;
+    public String getDescription() {
+        return description;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
@@ -51,7 +51,7 @@ public class Job implements Serializable {
         int hash = 5;
         hash = 29 * hash + (int) (Double.doubleToLongBits(this.pay) ^ (Double.doubleToLongBits(this.pay) >>> 32));
         hash = 29 * hash + Objects.hashCode(this.name);
-        hash = 29 * hash + Objects.hashCode(this.state);
+        hash = 29 * hash + Objects.hashCode(this.description);
         return hash;
     }
 
@@ -73,7 +73,7 @@ public class Job implements Serializable {
         if (!Objects.equals(this.name, other.name)) {
             return false;
         }
-        if (!Objects.equals(this.state, other.state)) {
+        if (!Objects.equals(this.description, other.description)) {
             return false;
         }
         return true;
@@ -81,7 +81,7 @@ public class Job implements Serializable {
 
     @Override
     public String toString() {
-        return "Job{" + "pay=" + pay + ", name=" + name + ", state=" + state + '}';
+        return "Job{" + "pay=" + pay + ", name=" + name + ", description=" + description + '}';
     }
     
     

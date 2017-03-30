@@ -41,7 +41,7 @@ public class RelocationView extends View {
                 + "\nKnoxville, TN    Montgomery, AL      Boston, MA"
                 + "\nTrenton, NJ      WashingtonDC, DC    Raleigh, NC"
                 + "\nCharleston, SC   Atlanta, GA         Miami, FL"
-                + "\nPlease enter the destination City (ex. Rexburg, ID)"
+                + "\nPlease enter the destination City (ex. Rexburg)"
                             + "\n Enter Q to quit");
       }
     
