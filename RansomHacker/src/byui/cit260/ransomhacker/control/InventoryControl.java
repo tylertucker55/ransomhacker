@@ -23,6 +23,9 @@ public class InventoryControl {
 
         double total = 0;
         for (int index = 0; index < inventory.size(); index++) {
+            if (inventory.get(index).getCost() < 0) {
+                return -1;
+        }
             total = total + inventory.get(index).getCost();
         }
 

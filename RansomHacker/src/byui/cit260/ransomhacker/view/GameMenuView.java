@@ -6,8 +6,10 @@
 package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
+import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.model.Scene;
 import ransomhacker.RansomHacker;
+import byui.cit260.ransomhacker.model.Character;
 
 /**
  *
@@ -94,7 +96,8 @@ public class GameMenuView extends View {
     }
 
     private void displayInventory() {
-        System.out.println("displayInventory() Called");
+        InventoryView inventoryview = new InventoryView(RansomHacker.getPlayer(), RansomHacker.getCurrentGame().getCharacter());
+        inventoryview.display();
     }
 
     private void displayStore() {

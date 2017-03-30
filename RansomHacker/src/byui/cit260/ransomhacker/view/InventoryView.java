@@ -11,6 +11,7 @@ import byui.cit260.ransomhacker.model.Item;
 import byui.cit260.ransomhacker.model.Player;
 import java.util.ArrayList;
 import ransomhacker.RansomHacker;
+import byui.cit260.ransomhacker.model.Character;
 
 /**
  *
@@ -35,7 +36,10 @@ public class InventoryView extends View {
             {
                 ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory();
                 InventoryControl icontrol = new InventoryControl();
-                icontrol.totalCost(inventory); 
+                if (icontrol.totalCost(inventory) == -1)
+                    System.out.println("Items cannot have a negative cost");
+                else
+                System.out.println("$" + icontrol.totalCost(inventory) + "0");
                 break;
             }    
             default:
