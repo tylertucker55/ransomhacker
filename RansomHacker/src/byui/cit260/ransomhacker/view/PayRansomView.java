@@ -35,7 +35,7 @@ public class PayRansomView extends View {
             try {
                 rcontrol.addDays(daysLeft, amountPaid); //How to fix this?
             } catch (RansomControlException ex) {
-                System.out.println("Days not Added");
+                System.out.println(ex.getMessage());
             }
             
         return true;
