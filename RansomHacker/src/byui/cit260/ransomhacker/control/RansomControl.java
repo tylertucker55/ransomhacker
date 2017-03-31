@@ -14,18 +14,22 @@ import ransomhacker.RansomHacker;
  */
 public class RansomControl {
     
-    public void addDays(int daysLeft, double amountPaid) throws RansomControlException {
+    public void addDays(int daysLeft, double amountToPay, double amount) throws RansomControlException {
     
     
-
-        if (amountPaid < 10000) { //amount paid is less than 10k?
+        // Checks amount is valid
+        if (amount < 10000) { //amount paid is less than 10k?
 	throw new RansomControlException("Amount payed must be less than 10k");
-        }            
+        }
+        // Checks that the character still has days
         if (daysLeft < 1) {  
 	throw new RansomControlException("The number of days left must be over one");
         }
-        int newDaysLeft = (int)(Math.round(amountPaid / 10000)) + daysLeft;
+        //Calclulates days left
+        int newDaysLeft = (int)(Math.round(amount / 10000)) + daysLeft;
+        //Adds the days
         RansomHacker.getCurrentGame().getCharacter().setDaysLeft(newDaysLeft);
+        //Reduces ransom amount
         
 
     }

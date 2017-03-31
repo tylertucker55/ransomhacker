@@ -11,6 +11,7 @@ import byui.cit260.ransomhacker.model.Location;
 import java.awt.Point;
 import java.io.Serializable;
 import byui.cit260.ransomhacker.model.Scene;
+import byui.cit260.ransomhacker.exceptions.RelocationControlException;
 
 /**
  *
@@ -18,13 +19,13 @@ import byui.cit260.ransomhacker.model.Scene;
  */
 public class RelocationControl implements Serializable {
 
-    public static boolean calcMoveCost(Character character, Point cityLocation) {
+    public static void calcMoveCost(Character character, Point cityLocation) throws RelocationControlException {
         //Check Inputs
         if (character == null) {
-            return false;
+            throw new RelocationControlException("No character detected");
         }
         if (cityLocation.x > 7 || cityLocation.y > 9) {
-            return false;
+            throw new RelocationControlException("Coordinates are not valid");
         }
         //Declare Variables
         Point charLocation = character.getCharLocation();
@@ -33,7 +34,7 @@ public class RelocationControl implements Serializable {
         double distance = Point.distance(charLocation.x, cityLocation.x, charLocation.y, cityLocation.y);
         //Check distance 
         if (distance == 0) {
-            return false;
+            throw new RelocationControlException("Can't move to your existing location");
         }
         //Calc Move Cost
         double moveCost;
@@ -42,7 +43,7 @@ public class RelocationControl implements Serializable {
         //Checks Money
         double money = character.getMoney();
         if (money < moveCost) {
-            return false;
+            throw new RelocationControlException("Not enough money to move");
         } //Subtracts cost of move from the character
         else {
             character.setMoney(money - moveCost);
@@ -56,7 +57,7 @@ public class RelocationControl implements Serializable {
 
         //Adds one to the Move counter
         character.setTimesMoved(timesMoved++);
-        return true;
+        
     }
     //Moves Character
 

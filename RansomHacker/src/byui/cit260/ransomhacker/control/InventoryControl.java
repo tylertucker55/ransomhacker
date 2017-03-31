@@ -15,7 +15,18 @@ import ransomhacker.RansomHacker;
  */
 public class InventoryControl {
 
-    public static void DisplayInventory() {
+    public static void displayInventory(ArrayList<Item> inventory) {
+        for (int index = 0; index <inventory.size(); index++) {
+            if (inventory == null) {
+                break;
+            }
+            else {
+                String name = inventory.get(index).getName();
+                int quantity = inventory.get(index).getQuantity();
+                System.out.println(name +" x" + quantity );
+            }
+            }
+            
 
     }
 

@@ -58,7 +58,7 @@ public class GameControl {
         character.setDaysLeft(90);
         character.setDetection(0);
         character.setMoney(1000);
-        character.setMoneyLeft(10000000);
+        character.setAmountToPay(10000000);
         character.setTimesMoved(0);
         character.setHackingLevel(1);
         
@@ -163,6 +163,7 @@ public class GameControl {
         beginnerhackingsoftware.setDescription("A free suite of hacking Tools for basic attacks");
         beginnerhackingsoftware.setCost(50);
         beginnerhackingsoftware.setOwned(true);
+        beginnerhackingsoftware.setQuantity(1);
         inventory[Items.beginnerhackingsoftware.ordinal()] = beginnerhackingsoftware;
         
         Item intermediatehackingsoftware = new Item();
@@ -274,10 +275,35 @@ public class GameControl {
         SkillDevelopment[] courseList = new SkillDevelopment[3];
         
         SkillDevelopment selfStudy = new SkillDevelopment();
+        selfStudy.setName("Self-Study");
+        selfStudy.setDescription("\nTake a few days to research security and improve your Hacking Skill"
+                + "\n+1 Hacking"
+                + "\nTime: 3 Days"
+                + "\nCost: $0.00");
+        selfStudy.setMoneyCost(0);
+        selfStudy.setTimeCost(3);
+        selfStudy.setValue(1);
         
         SkillDevelopment psychologyClass = new SkillDevelopment();
+        psychologyClass.setName("Psychology Class");
+        psychologyClass.setDescription("\nTake a short course in Psychology to improve your Social Engineering Skill"
+                + "\n+3 Social Engineering"
+                + "\nTime: 7 Days"
+                + "\nCost: $5000.00");
+        psychologyClass.setMoneyCost(5000);
+        psychologyClass.setTimeCost(7);
+        psychologyClass.setValue(3);
         
         SkillDevelopment hackerBootCamp = new SkillDevelopment();
+        hackerBootCamp.setName("Hacker Boot Camp");
+        hackerBootCamp.setDescription("\nGo to a week long hacking course to improve your Hacking Skill"
+                + "\n+3 Hacking"
+                + "\nTime: 7 Days"
+                + "\nCost $5000.00");
+        hackerBootCamp.setTimeCost(7);
+        hackerBootCamp.setMoneyCost(5000);
+        hackerBootCamp.setValue(3);
+        
         
   
         return courseList;

@@ -21,7 +21,7 @@ public class GameMenuView extends View {
     public GameMenuView() {
         super("\nDays until ransom is due: " + RansomHacker.getCurrentGame().getCharacter().getDaysLeft()
                     + "\nFBI detection: " + RansomHacker.getCurrentGame().getCharacter().getDetection() + "%"
-                    + "\nMoney: $" + RansomHacker.getCurrentGame().getCharacter().getMoney() + "/$" + RansomHacker.getCurrentGame().getCharacter().getMoneyLeft()
+                    + "\nMoney: $" + RansomHacker.getCurrentGame().getCharacter().getMoney() + "/$" + RansomHacker.getCurrentGame().getCharacter().getAmountToPay()
                     + "\n------------------------------"
                     + "\n1 - Character Stats"
                     + "\n2 - Available Jobs"

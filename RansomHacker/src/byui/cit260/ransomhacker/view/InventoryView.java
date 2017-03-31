@@ -22,7 +22,8 @@ public class InventoryView extends View {
     public InventoryView (Player player, Character character){
         super("\n" + player.getName() + "'s Inventory:");
         
-        InventoryControl.DisplayInventory();
+        ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory(); //why does this display before the line before?
+        InventoryControl.displayInventory(inventory);
         
         System.out.println("Press 1 to calculate total value of your inventory or Q to exit");
     }

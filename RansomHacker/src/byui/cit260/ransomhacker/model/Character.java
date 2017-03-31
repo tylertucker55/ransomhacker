@@ -24,8 +24,7 @@ public Point charLocation;
 private double money;
 private int daysLeft;
 private double detection;
-private double moneyLeft;
-private double amountPaid;
+private double amountToPay;
 private int timesMoved;
 private int hackingLevel;
 private int socialLevel;
@@ -79,12 +78,12 @@ public Character() {
         this.stealthLevel = stealthLevel;
     }
 
-    public double getAmountPaid() {
-        return amountPaid;
+    public double getAmountToPay() {
+        return amountToPay;
     }
 
-    public void setAmountPaid(double amountPaid) {
-        this.amountPaid = amountPaid;
+    public void setAmountToPay(double amountToPay) {
+        this.amountToPay = amountToPay;
     }
     
     public Point getCharLocation() {
@@ -159,14 +158,6 @@ public Character() {
 
     public void setDetection(double detection) {
         this.detection = detection;
-    }
-
-    public double getMoneyLeft() {
-        return moneyLeft;
-    }
-
-    public void setMoneyLeft(double moneyLeft) {
-        this.moneyLeft = moneyLeft;
     }
 
     public Skill[] getSkillLevels() {

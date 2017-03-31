@@ -23,17 +23,19 @@ public class PayRansomView extends View {
 
     @Override
     public boolean doAction(String value) {
+        
         if (value.length() < 1) {
             
                 System.out.println("You must pay more than $0.00");
                 return false;
         }
             else {
+             double amount = Double.parseDouble(value);
         int daysLeft = RansomHacker.getCurrentGame().getCharacter().getDaysLeft();
-        double amountPaid = RansomHacker.getCurrentGame().getCharacter().getAmountPaid();
+        double amountToPay = RansomHacker.getCurrentGame().getCharacter().getAmountToPay();
         RansomControl rcontrol = new RansomControl();
             try {
-                rcontrol.addDays(daysLeft, amountPaid); //How to fix this?
+                rcontrol.addDays(daysLeft, amountToPay, amount); //How to fix this?
             } catch (RansomControlException ex) {
                 System.out.println(ex.getMessage());
             }

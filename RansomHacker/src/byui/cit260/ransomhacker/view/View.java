@@ -5,7 +5,9 @@
  */
 package byui.cit260.ransomhacker.view;
 
+
 import java.util.Scanner;
+import static javax.xml.bind.DatatypeConverter.parseInt;
 
 /**
  *
@@ -32,7 +34,7 @@ public abstract class View implements ViewInterface {
                 return;
             
             done = this.doAction(menuOption);
-            
+                
         } while (!done);
     }
     

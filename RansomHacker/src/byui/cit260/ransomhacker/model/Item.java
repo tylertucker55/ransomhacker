@@ -18,7 +18,7 @@ public class Item implements Serializable {
     private String name;
     private String description;
     private double cost;
-    private double quantity;
+    private int quantity;
     private boolean owned;
     private int hackingLevel;
     private int socialLevel;
@@ -54,11 +54,11 @@ public class Item implements Serializable {
         this.cost = cost;
     }
 
-    public double getQuantity() {
+    public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(double quantity) {
+    public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
 
