@@ -57,7 +57,7 @@ public class GameControl {
         character = new Character();
         character.setDaysLeft(90);
         character.setDetection(0);
-        character.setMoney(1000);
+        character.setMoney(15000);
         character.setAmountToPay(10000000);
         character.setTimesMoved(0);
         character.setHackingLevel(1);
