@@ -16,24 +16,10 @@ import byui.cit260.ransomhacker.model.Character;
  * @author Hansen
  */
 public class GameMenuView extends View {
-    
+   
     
     public GameMenuView() {
-        super("\nDays until ransom is due: " + RansomHacker.getCurrentGame().getCharacter().getDaysLeft()
-                    + "\nFBI detection: " + RansomHacker.getCurrentGame().getCharacter().getDetection() + "%"
-                    + "\nMoney: $" + RansomHacker.getCurrentGame().getCharacter().getMoney() + "/$" + RansomHacker.getCurrentGame().getCharacter().getAmountToPay()
-                    + "\n------------------------------"
-                    + "\n1 - Character Stats"
-                    + "\n2 - Available Jobs"
-                    + "\n3 - Available Courses"
-                    + "\n4 - Equipment"
-                    + "\n5 - Store"
-                    + "\n6 - Relocate"
-                    + "\n7 - Pay Ransom"
-                    + "\n8 - Save Game"
-                    + "\n9 - View Map"
-                    + "\n10 - Help"
-                    + "\nQ - Quit");
+        this.displayMessage = this.getMenu();
     
 }  
     @Override
@@ -76,6 +62,8 @@ public class GameMenuView extends View {
                 break;
    
         }
+        
+        this.displayMessage = this.getMenu();
         
         return false;
     }      
@@ -120,6 +108,24 @@ public class GameMenuView extends View {
         saveGameView.display();
     }
 
+    private String getMenu() {
+        return "\nDays until ransom is due: " + RansomHacker.getCurrentGame().getCharacter().getDaysLeft()
+                    + "\nFBI detection: " + RansomHacker.getCurrentGame().getCharacter().getDetection() + "%"
+                    + "\nMoney: $" + RansomHacker.getCurrentGame().getCharacter().getMoney() + "/$" + RansomHacker.getCurrentGame().getCharacter().getAmountToPay() //how to display like a dollar amount?
+                    + "\n------------------------------"
+                    + "\n1 - Character Stats"
+                    + "\n2 - Available Jobs"
+                    + "\n3 - Available Courses"
+                    + "\n4 - Equipment"
+                    + "\n5 - Store"
+                    + "\n6 - Relocate"
+                    + "\n7 - Pay Ransom"
+                    + "\n8 - Save Game"
+                    + "\n9 - View Map"
+                    + "\n10 - Help"
+                    + "\nQ - Quit";
+    }
+    
     private void displayMap() {
         System.out.println("   1   2   3   4   5   6   7   8   9");
         System.out.println("1 "  + Scene.Seattle.getSymbol()

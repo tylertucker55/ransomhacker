@@ -50,8 +50,7 @@ public class GameControl {
         Character character = new Character();
         
         character.setPlayer(player);
-        //Set Starting Location
-        character.setCharLocation(Scene.Rexburg.getCoordinates());
+        
         
         //Create Player and Initialize starting attributes
         character = new Character();
@@ -61,6 +60,9 @@ public class GameControl {
         character.setAmountToPay(10000000);
         character.setTimesMoved(0);
         character.setHackingLevel(1);
+        
+        //Set Starting Location
+        character.setCharLocation(Scene.Rexburg.getCoordinates());
         
         game.setCharacter(character);
         

@@ -12,6 +12,8 @@ import java.awt.Point;
 import java.io.Serializable;
 import byui.cit260.ransomhacker.model.Scene;
 import byui.cit260.ransomhacker.exceptions.RelocationControlException;
+import ransomhacker.RansomHacker;
+import java.awt.geom.Point2D;
 
 /**
  *
@@ -28,10 +30,10 @@ public class RelocationControl implements Serializable {
             throw new RelocationControlException("Coordinates are not valid");
         }
         //Declare Variables
-        Point charLocation = character.getCharLocation();
-        int timesMoved = character.getTimesMoved();
+        Point charLocation = RansomHacker.getCurrentGame().getCharacter().getCharLocation();
+        int timesMoved = RansomHacker.getCurrentGame().getCharacter().getTimesMoved();
         //Calc distance
-        double distance = Point.distance(charLocation.x, cityLocation.x, charLocation.y, cityLocation.y);
+        double distance = Point2D.distance(charLocation.x, charLocation.y, cityLocation.x, cityLocation.y);
         //Check distance 
         if (distance == 0) {
             throw new RelocationControlException("Can't move to your existing location");
