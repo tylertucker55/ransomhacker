@@ -6,8 +6,11 @@
 package byui.cit260.ransomhacker.view;
 
 
+import java.io.BufferedReader;
+import java.io.PrintWriter;
 import java.util.Scanner;
 import static javax.xml.bind.DatatypeConverter.parseInt;
+import ransomhacker.RansomHacker;
 
 /**
  *
@@ -15,6 +18,9 @@ import static javax.xml.bind.DatatypeConverter.parseInt;
  */
 public abstract class View implements ViewInterface {
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = RansomHacker.getInFile();
+    protected final PrintWriter console = RansomHacker.getOutFile();
     
     public View() {
     }
