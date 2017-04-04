@@ -30,12 +30,16 @@ public class PayRansomView extends View {
                 return false;
         }
             else {
-             double amount = Double.parseDouble(value);
+             double amount = 0;
+           try {amount = Double.parseDouble(value);
+           } catch (NumberFormatException nf) {
+               System.out.println("This value must be a number");
+           }
         int daysLeft = RansomHacker.getCurrentGame().getCharacter().getDaysLeft();
         double amountToPay = RansomHacker.getCurrentGame().getCharacter().getAmountToPay();
         RansomControl rcontrol = new RansomControl();
             try {
-                rcontrol.addDays(daysLeft, amountToPay, amount); //How to fix this?
+                rcontrol.addDays(daysLeft, amountToPay, amount); 
             } catch (RansomControlException ex) {
                 System.out.println(ex.getMessage());
             }
