@@ -77,6 +77,7 @@ public class RansomHacker {
             String filePath = "log.txt";
             RansomHacker.logFile = new PrintWriter(filePath);
             startProgramView.display();
+            
         } catch (Throwable te) {
             System.out.println(te.getMessage());
             te.printStackTrace();
@@ -90,6 +91,10 @@ public class RansomHacker {
                 
                 if (RansomHacker.outFile != null)
                 RansomHacker.outFile.close();
+                
+                if (RansomHacker.logFile != null)
+                RansomHacker.logFile.close();
+                
             } catch (IOException ex) {
                 System.out.println("Error CLosing files");
                 return;
