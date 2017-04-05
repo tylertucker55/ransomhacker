@@ -26,6 +26,7 @@ public class GameMenuView extends View {
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
 
+        // Try-catch statement for the menu, displays error when entering invalid number //
         try {
               
            
