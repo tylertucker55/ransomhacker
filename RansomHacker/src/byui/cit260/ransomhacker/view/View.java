@@ -36,6 +36,7 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         do {
             String menuOption = this.getInput();
+
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             

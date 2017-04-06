@@ -70,7 +70,23 @@ public class MainMenuView extends View {
     }
 
     private void openGame() {
-        System.out.println("openGame Function Called");
+        System.out.println("Enter location of save file:");
+        String filePath = this.getInput();
+        
+        try {
+         GameControl.loadGame(filePath);
+         
+         
+        }
+        catch(Exception ex) {
+            System.out.println("Game Not Loaded");
+        }
+     
+        System.out.println("\n|||||||             |||||||||"
+                          +"\n|||                       |||"
+                          +"\n|||      Game Loaded      |||"
+                          +"\n|||                       |||"
+                          +"\n|||||||             |||||||||");
     }
 
     private void displayHelpMenu() {
