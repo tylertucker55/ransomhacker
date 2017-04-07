@@ -112,22 +112,8 @@ public class GameMenuView extends View {
     }
 
     private void displaySaveGame() {
-        System.out.println("Enter location where you would like to save the file:");
-        String filePath = this.getInput();
-        
-        try {
-            GameControl.saveGame(RansomHacker.getCurrentGame(), filePath);
-        }
-        catch(Exception ex) {
-            System.out.println("GameMenuView");
-        }
-     
-        System.out.println("\n|||||||             |||||||||"
-                          +"\n|||                       |||"
-                          +"\n|||      Game Saved       |||"
-                          +"\n|||                       |||"
-                          +"\n|||||||             |||||||||");
-        
+        SaveGameView saveGameView = new SaveGameView();
+        saveGameView.display();
     }
 
     private String getMenu() {

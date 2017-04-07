@@ -64,7 +64,7 @@ public class HelpMenuView extends View {
     }
 
     private void openObjectOfTheGame() {
-        System.out.println("\n*** openObjectOfTheGame Function Called ***"); 
+        System.out.println("\nThe Objective of the game is"); 
     }
 
     private void openStatDescription() {

@@ -19,9 +19,9 @@ import byui.cit260.ransomhacker.model.Character;
  */
 public class InventoryView extends View {
 
-    public InventoryView (Player player, Character character){
+    public InventoryView (Player player, Character character) {
         super("\n" + player.getName() + "'s Inventory:");
-        
+         
         ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory(); //why does this display before the line before?
         InventoryControl.displayInventory(inventory);
         
@@ -48,7 +48,7 @@ public class InventoryView extends View {
                 break;
         }
         
-        return false;
+        return true;
     }
     
 }
