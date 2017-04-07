@@ -24,7 +24,7 @@ public class PrintReportView extends View{
                     + "\n----------------------------"
                     + "\n| Print Report Menu        |"
                     + "\n----------------------------"
-                    + "\n1 - Print Location Report"
+                    + "\n1 - Print Scene Report"
                     + "\n2 - Print Inventory Report"
                     + "\n3 - Print Store Report"
                     + "\n4 - Print Character Report"
@@ -60,7 +60,28 @@ public class PrintReportView extends View{
     }
 
     private void locationReport() {
-       System.out.println("\n*** locationReport() Stub Function Called.");
+      // System.out.println("\n*** locationReport() Stub Function Called.");
+       
+       String fileName = "SceneReport.txt";
+      
+      PrintWriter writer = null;
+           
+           try {
+               writer = new PrintWriter(fileName);
+            
+        } catch (IOException ex) {
+            System.out.println("I/O Error: "+ ex.getMessage());
+        } 
+           writer.println("\n\n         Scene Report          ");
+            writer.printf("%n%-20s%10s","Scene Name","Scene Symbol");
+            writer.printf("%n%-20s%10s","-----------","-----");
+           
+            for(Scene name: Scene.values()){
+           writer.printf("%n%-20s%5s", name
+                                     , name.getSymbol());
+           }
+           
+           writer.close();
     }
     private void inventoryReport() {
        
@@ -74,7 +95,7 @@ public class PrintReportView extends View{
         } catch (IOException ex) {
             System.out.println("I/O Error: "+ ex.getMessage());
         } 
-           writer.println("\n\n         Job Report          ");
+           writer.println("\n\n         Inventory Report          ");
             writer.printf("%n%-20s%10s","Description","Price");
             writer.printf("%n%-20s%10s","-----------","-----");
            
