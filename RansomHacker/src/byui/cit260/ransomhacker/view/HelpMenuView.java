@@ -55,7 +55,7 @@ public class HelpMenuView extends View {
                 this.openAttacking();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
    
         }

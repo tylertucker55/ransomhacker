@@ -38,7 +38,7 @@ public class CharacterStatsView extends View {
                 this.stealthStat();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
         }
             return false;
