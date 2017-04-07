@@ -13,7 +13,9 @@ import java.util.ArrayList;
 import ransomhacker.RansomHacker;
 import byui.cit260.ransomhacker.view.View;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 
 /**
  *
@@ -35,22 +37,30 @@ public class InventoryControl {
         return total;
     }
     
-    public static void writeInventory(ArrayList<Item> inventory, String filePath)
+    public static void writeInventory(ArrayList<Item> inventory, String fileName)
             throws InventoryControlException {
-
-        try( FileOutputStream fops = new FileOutputStream(filePath)) {
-            ObjectOutputStream output = new ObjectOutputStream(fops);
-            for (int index = 0; index < inventory.size(); index++) {
-                output.writeObject(inventory.get(index).getName()); //Not writing a file?
+            
+            
+                    PrintWriter writer = null;
+                    
+                    try { writer = new PrintWriter(fileName + "InventoryReport.txt");}
+                    catch (IOException ex) {
+                        System.out.println("I/O Error: " + ex.getMessage());
+                    }
+            writer.println("\n\n         Inventory Report          ");
+            writer.printf("%n%-30s%-10s%-50s","Name","Price","Description");
+            writer.printf("%n%-30s%-10s%-50s","-----------","-----","-------------------");
+            for (Item item : inventory) {
+                writer.printf("%n%-30s%-10.2f%-50s", item.getName()
+                                                 , item.getCost()
+                                                 , item.getDescription()); //Not writing a file?
             }
+            writer.close();
+            
             
             
         }
-        catch(Exception e) {
-            throw new InventoryControlException(e.getMessage(), e.getCause());
-        }
-        
-    }
+      
 
     public void addItemtoInventory() {
         

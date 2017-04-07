@@ -60,11 +60,12 @@ public class InventoryView extends View {
             }
             case "2":
             {
-                this.console.println("Enter desired file path:");
-                String filePath = this.getInput();
+                this.console.println("Enter desired file path: "
+                                     + "\nExample: C:\\Users\\User\\Documents\\");
+                String fileName = this.getInput();
                 ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory();
             try {
-                InventoryControl.writeInventory(inventory, filePath);
+                InventoryControl.writeInventory(inventory, fileName);
             } catch (InventoryControlException ex) {
                 ErrorView.display(this.getClass().getName(),"Failed to Save");
             }
