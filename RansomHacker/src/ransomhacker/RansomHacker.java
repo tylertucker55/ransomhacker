@@ -70,7 +70,7 @@ public class RansomHacker {
         // TODO code application logic here
        
         
-        StartProgramView startProgramView = new StartProgramView();
+        
         
         try {
             RansomHacker.inFile = new BufferedReader(new InputStreamReader(System.in));
@@ -78,6 +78,7 @@ public class RansomHacker {
             
             String filePath = "log.txt";
             RansomHacker.logFile = new PrintWriter(filePath);
+            StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
             
         } catch (Throwable te) {
@@ -85,7 +86,7 @@ public class RansomHacker {
                                 "\nCause: " + te.getCause() +
                                 "\nMessage: " +te.getMessage());
             te.printStackTrace();
-            startProgramView.display();
+            
         }
       
         finally {

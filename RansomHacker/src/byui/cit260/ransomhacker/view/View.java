@@ -53,12 +53,6 @@ public abstract class View implements ViewInterface {
         
         String value = "";
         boolean valid = false;
-        try {
-            value = this.keyboard.readLine();
-        } catch (IOException ex) {
-            ErrorView.display(this.getClass().getName(),"Error getting Input");
-        }
-
         while (!valid) {
 
 

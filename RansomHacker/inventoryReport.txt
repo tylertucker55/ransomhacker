@@ -1,6 +1,6 @@
 
 
-         Job Report          
+         Inventory Report          
 
 Description              Price
 -----------              -----
