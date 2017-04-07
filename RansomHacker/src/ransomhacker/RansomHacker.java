@@ -68,7 +68,7 @@ public class RansomHacker {
         // TODO code application logic here
        
         
-        StartProgramView startProgramView = new StartProgramView();
+        
         
         try {
             RansomHacker.inFile = new BufferedReader(new InputStreamReader(System.in));
@@ -76,18 +76,22 @@ public class RansomHacker {
             
             String filePath = "log.txt";
             RansomHacker.logFile = new PrintWriter(filePath);
+                        
+            StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
             
         } catch (Throwable te) {
-            System.out.println(te.getMessage());
+            System.out.println("Exception: " + te.toString()
+                    + "\nCause: " + te.getCause()
+                    + "\nMessage:" +te.getMessage());
             te.printStackTrace();
-            startProgramView.display();
+            
         }
       
         finally {
             try {
                 if (RansomHacker.inFile != null)
-                        RansomHacker.inFile.close();
+                RansomHacker.inFile.close();
                 
                 if (RansomHacker.outFile != null)
                 RansomHacker.outFile.close();
@@ -96,7 +100,7 @@ public class RansomHacker {
                 RansomHacker.logFile.close();
                 
             } catch (IOException ex) {
-                System.out.println("Error CLosing files");
+                System.out.println("Error Closing files");
                 return;
             }
             
