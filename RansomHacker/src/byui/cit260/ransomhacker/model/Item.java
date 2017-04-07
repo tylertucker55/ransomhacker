@@ -6,14 +6,27 @@
 package byui.cit260.ransomhacker.model;
 
 import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Objects;
-
+import java.util.Arrays;
 /**
  *
  * @author muhile
  */
 public class Item implements Serializable {
+    
+     /*COMPUTER,
+     WIFICARD,
+     EMAILSERVER,
+     SUPERCOMPUTER,
+     BOTNET,
+     VPNSERVICE,
+     PROXYNETWORK,
+     BEGINNERHACKINGSOFTWARE,
+     INTERMEDIATEHACKINGSOFTWARE,
+     ADVANCEDHACKINGSOFTWARE,
+     EXPERTHACKINGSOFTWARE,
+     ZERODAYATTACKS;
+     */   
 
     private String name;
     private String description;
@@ -176,6 +189,8 @@ public class Item implements Serializable {
         return "Item{" + "name=" + name + ", description=" + description + ", cost=" + cost + ", quantity=" + quantity + ", owned=" + owned + ", hackingLevel=" + hackingLevel + ", socialLevel=" + socialLevel + ", precisionLevel=" + precisionLevel + ", speedLevel=" + speedLevel + ", stealthLevel=" + stealthLevel + '}';
     }
 
+    
+    
    
     
 }
