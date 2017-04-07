@@ -62,7 +62,7 @@ public class PrintReportView extends View{
     private void locationReport() {
       // System.out.println("\n*** locationReport() Stub Function Called.");
        
-       String fileName = "SceneReport.txt";
+       String fileName = "sceneReport.txt";
       
       PrintWriter writer = null;
            
@@ -74,7 +74,7 @@ public class PrintReportView extends View{
         } 
            writer.println("\n\n         Scene Report          ");
             writer.printf("%n%-20s%10s","Scene Name","Scene Symbol");
-            writer.printf("%n%-20s%10s","-----------","-----");
+            writer.printf("%n%-20s%10s","-----------","-----------");
            
             for(Scene name: Scene.values()){
            writer.printf("%n%-20s%5s", name
