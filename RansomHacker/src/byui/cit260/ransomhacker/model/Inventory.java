@@ -16,19 +16,6 @@ public enum Inventory {
     KEYBOARD(30, "This is a Keyboard"),
     TABLET(60, "This is a Tablet");
     
-   /* public final String itemRepresentation;
-    
-    private Inventory(String itemRepresentation){
-        this.itemRepresentation = itemRepresentation;
-        
-    }
-    */
-    
-  /* @Override public String toString() {
-       return itemRepresentation;
-   } 
-*/
-    
     private final int price;
     private final String description;
     
