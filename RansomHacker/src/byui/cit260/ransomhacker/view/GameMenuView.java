@@ -58,7 +58,7 @@ public class GameMenuView extends View {
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
    
         }
@@ -127,8 +127,8 @@ public class GameMenuView extends View {
     }
     
     private void displayMap() {
-        System.out.println("   1   2   3   4   5   6   7   8   9");
-        System.out.println("1 "  + Scene.Seattle.getSymbol()
+        this.console.println("   1   2   3   4   5   6   7   8   9");
+        this.console.println("1 "  + Scene.Seattle.getSymbol()
                                  + Scene.Spokane.getSymbol()
                                  + Scene.Helena.getSymbol()
                                  + Scene.Bismark.getSymbol()

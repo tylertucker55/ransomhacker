@@ -49,7 +49,8 @@ public class AttackMenuView extends View {
                 this.doAttack3();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),
+                        "\nInvalid Selection");
                 break;
         }
         return false;

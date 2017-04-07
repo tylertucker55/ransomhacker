@@ -47,7 +47,7 @@ public class StoreView extends View {
                 this.openHackingTools();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
    
         }

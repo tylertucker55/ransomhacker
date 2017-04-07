@@ -25,7 +25,7 @@ public class InventoryView extends View {
         ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory(); //why does this display before the line before?
         InventoryControl.displayInventory(inventory);
         
-        System.out.println("Press 1 to calculate total value of your inventory or Q to exit");
+        this.console.println("Press 1 to calculate total value of your inventory or Q to exit");
     }
     
     
@@ -38,13 +38,13 @@ public class InventoryView extends View {
                 ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory();
                 InventoryControl icontrol = new InventoryControl();
                 if (icontrol.totalCost(inventory) == -1)
-                    System.out.println("Items cannot have a negative cost");
+                    ErrorView.display(this.getClass().getName(),"Items cannot have a negative cost");
                 else
-                System.out.println("$" + icontrol.totalCost(inventory) + "0");
+                this.console.println("$" + icontrol.totalCost(inventory) + "0");
                 break;
             }    
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
         }
         

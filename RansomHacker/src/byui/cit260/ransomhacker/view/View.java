@@ -7,8 +7,11 @@ package byui.cit260.ransomhacker.view;
 
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import static javax.xml.bind.DatatypeConverter.parseInt;
 import ransomhacker.RansomHacker;
 
@@ -46,18 +49,21 @@ public abstract class View implements ViewInterface {
     
     @Override
     public String getInput() {
-        Scanner keyboard = new Scanner(System.in);
-        String value = "";
+        
+        String value = " ";
         boolean valid = false;
+        try {
+            value = this.keyboard.readLine();
+        } catch (IOException ex) {
+            ErrorView.display(this.getClass().getName(),"Error getting Input");
+        }
 
         while (!valid) {
             System.out.println("\n" + this.displayMessage);
-
-            value = keyboard.nextLine();
             value = value.trim();
 
             if (value.length() == 0) {
-                System.out.println("\nInvalid value");
+                ErrorView.display(this.getClass().getName(),"\nInvalid value");
                 continue;
             }
 

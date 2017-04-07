@@ -19,7 +19,7 @@ public class LoadGameView extends View {
     @Override
     public boolean doAction(String input) {
             if (input.length() < 2) {
-            System.out.println("\nInvalid location: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid location: "
                 + "The location must be greater than one character in length");
             return false;
         }
@@ -31,7 +31,7 @@ public class LoadGameView extends View {
     }
        
     private void displayBanner() {
-        System.out.println("\n|||||||             |||||||||"
+        this.console.println("\n|||||||             |||||||||"
                           +"\n|||                       |||"
                           +"\n|||      Game Loaded      |||"
                           +"\n|||                       |||"
