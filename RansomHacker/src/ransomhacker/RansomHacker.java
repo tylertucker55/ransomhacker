@@ -81,7 +81,9 @@ public class RansomHacker {
             startProgramView.display();
             
         } catch (Throwable te) {
-            System.out.println(te.getMessage());
+            System.out.println( "Exception: " + te.toString() +
+                                "\nCause: " + te.getCause() +
+                                "\nMessage: " +te.getMessage());
             te.printStackTrace();
             startProgramView.display();
         }

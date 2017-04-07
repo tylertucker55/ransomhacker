@@ -38,6 +38,9 @@ public class RansomControl {
         //Adds the days
         RansomHacker.getCurrentGame().getCharacter().setDaysLeft(newDaysLeft); //Why doesn't this update the variable DaysLeft?
         //Reduces ransom amount
+        amountToPay = (amountToPay - amount);
+        RansomHacker.getCurrentGame().getCharacter().setAmountToPay(amountToPay);
+        
         
 
     }

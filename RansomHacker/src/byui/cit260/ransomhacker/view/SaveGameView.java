@@ -25,10 +25,16 @@ public class SaveGameView extends View{
   
 
     @Override
-    public boolean doAction(String choice) {
-         choice = choice.toUpperCase();
-        
-        switch (choice) {
+
+    public boolean doAction(String input) {
+            if (input.length() < 2) {
+            ErrorView.display(this.getClass().getName(),"\nInvalid file location: "
+                + "The location must be greater than one character in length");
+            return false;
+        }
+            
+            input = input.toUpperCase();
+     switch (input) {
             case "Y":
                System.out.println("\n|||||||             |||||||||"
                           +"\n|||                       |||"
@@ -47,11 +53,13 @@ public class SaveGameView extends View{
                 System.out.println("\nInvalid Selection");
                 break;
         }
-     
+
         
-    return true;
+        return true;
     }
+       
     
+
     
     
     
