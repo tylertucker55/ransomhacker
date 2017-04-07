@@ -6,6 +6,7 @@
 package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
+import byui.cit260.ransomhacker.exceptions.GameControlException;
 import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.model.Scene;
 import ransomhacker.RansomHacker;
@@ -25,42 +26,50 @@ public class GameMenuView extends View {
     @Override
     public boolean doAction(String choice) {
         choice = choice.toUpperCase();
-        
-        switch (choice) {
-            case "1":
+
+        // Try-catch statement for the menu, displays error when entering invalid number //
+        try {
+              
+           
+        switch (Integer.parseInt(choice)) {
+            case 1:
                 this.displayCharStats();
                 break;
-            case "2":
+            case 2:
                 this.displayJobs();
                 break;
-            case "3":
+            case 3:
                 this.displaySkillDev();
                 break;
-            case "4":
+            case 4:
                 this.displayInventory();
                 break;
-            case "5":
+            case 5:
                 this.displayStore();
                 break;
-            case "6":
+            case 6:
                 this.displayRelocation();
                 break;
-            case "7":
+            case 7:
                 this.displayPayRansom();
                 break;
-            case "8":
+            case 8:
                 this.displaySaveGame();
                 break;
-            case "9":
+            case 9:
                 this.displayMap();
                 break;
-            case "10":
+            case 10:
                 this.displayHelpMenu();
                 break;
             default:
                 ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
-   
+            
+        }
+        }
+        catch (NumberFormatException nf) {
+            ErrorView.display(this.getClass().getName(),"This value must be a number. Press Q to quit.");
         }
         
         this.displayMessage = this.getMenu();

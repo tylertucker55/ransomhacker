@@ -41,7 +41,7 @@ public class PayRansomView extends View {
             try {
                 rcontrol.addDays(daysLeft, amountToPay, amount); 
             } catch (RansomControlException ex) {
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(),ex.getMessage());
             }
             
         return true;

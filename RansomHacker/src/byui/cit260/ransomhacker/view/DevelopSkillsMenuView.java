@@ -46,7 +46,7 @@ public class DevelopSkillsMenuView extends View {
                 this.openPsychologyClass();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
    
         }

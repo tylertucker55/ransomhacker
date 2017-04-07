@@ -64,31 +64,26 @@ public class HelpMenuView extends View {
     }
 
     private void openObjectOfTheGame() {
-        System.out.println("\n*** openObjectOfTheGame Function Called ***"); 
+        System.out.println("\nThe Objective of the game is"); 
     }
 
     private void openStatDescription() {
         System.out.println("\n*** openStatDescription Function Called ***");
-        CharacterStatsView gameMenu = new CharacterStatsView();
-        gameMenu.display();
+        
     }
 
     private void openRelocating() {
         System.out.println("\n*** openRelocating Function Called ***");
-        LoadGameView gameMenu = new LoadGameView();
-        gameMenu.display();
         
     }
 
     private void openJobs() {
         System.out.println("\n*** openJobs Function Called ***");
-        JobListView gameMenu = new JobListView();
-        gameMenu.display();
+        
     }
 
     private void openDevelopingSkills() {
-        DevelopSkillsMenuView skillsMenu = new DevelopSkillsMenuView();
-        skillsMenu.display();
+        System.out.println("Placeholder");
         
     }
 

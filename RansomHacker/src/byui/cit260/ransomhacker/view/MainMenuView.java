@@ -23,8 +23,9 @@ public class MainMenuView extends View {
                     + "\n| Main Menu                |"
                     + "\n----------------------------"
                     + "\n1 - New Game"
-                    + "\n2 - Open Save File"
+                    + "\n2 - Load Game"
                     + "\n3 - Help (How to play)"
+                    + "\n4 - Print Reports"
                     + "\nQ - Quit"
                     + "\n----------------------------"
                     + "\nPlease select option ");
@@ -48,6 +49,8 @@ public class MainMenuView extends View {
             case "3":
                 this.displayHelpMenu();
                 break;
+            case "4":
+                this.printReport();
             default:
                 ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
@@ -70,7 +73,23 @@ public class MainMenuView extends View {
     }
 
     private void openGame() {
-        System.out.println("openGame Function Called");
+        this.console.println("Enter location of save file:");
+        String filePath = this.getInput();
+        
+        try {
+         GameControl.loadGame(filePath);
+         this.console.println("\n|||||||             |||||||||"
+                          +"\n|||                       |||"
+                          +"\n|||      Game Loaded      |||"
+                          +"\n|||                       |||"
+                          +"\n|||||||             |||||||||");
+         
+        }
+        catch(Exception ex) {
+            ErrorView.display(this.getClass().getName(),"Game Not Loaded");
+        }
+     
+        
     }
 
     private void displayHelpMenu() {
@@ -78,6 +97,11 @@ public class MainMenuView extends View {
         HelpMenuView gameMenu = new HelpMenuView();
         gameMenu.display();
         
+    }
+
+    private void printReport() {
+       PrintReportView gameMenu = new PrintReportView();
+       gameMenu.display();
     }
    
 }

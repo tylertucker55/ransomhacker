@@ -39,6 +39,7 @@ public abstract class View implements ViewInterface {
         boolean done = false;
         do {
             String menuOption = this.getInput();
+
             if (menuOption.toUpperCase().equals("Q"))
                 return;
             
@@ -50,7 +51,7 @@ public abstract class View implements ViewInterface {
     @Override
     public String getInput() {
         
-        String value = " ";
+        String value = "";
         boolean valid = false;
         try {
             value = this.keyboard.readLine();
@@ -59,7 +60,16 @@ public abstract class View implements ViewInterface {
         }
 
         while (!valid) {
-            System.out.println("\n" + this.displayMessage);
+
+
+            this.console.println("\n" + this.displayMessage);
+
+            try {
+                value = this.keyboard.readLine();
+            } catch (IOException ex) {
+                ErrorView.display(this.getClass().getName(),"Error getting Input");
+            }
+
             value = value.trim();
 
             if (value.length() == 0) {

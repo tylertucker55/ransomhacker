@@ -7,11 +7,14 @@ package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
 import byui.cit260.ransomhacker.control.InventoryControl;
+import byui.cit260.ransomhacker.exceptions.InventoryControlException;
 import byui.cit260.ransomhacker.model.Item;
 import byui.cit260.ransomhacker.model.Player;
 import java.util.ArrayList;
 import ransomhacker.RansomHacker;
 import byui.cit260.ransomhacker.model.Character;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,15 +22,27 @@ import byui.cit260.ransomhacker.model.Character;
  */
 public class InventoryView extends View {
 
-    public InventoryView (Player player, Character character){
+    public InventoryView (Player player, Character character) {
         super("\n" + player.getName() + "'s Inventory:");
-        
+         
         ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory(); //why does this display before the line before?
-        InventoryControl.displayInventory(inventory);
+        this.displayInventory(inventory);
         
-        this.console.println("Press 1 to calculate total value of your inventory or Q to exit");
+        this.console.println("Press 1 to calculate total value of your inventory, 2 to print your inventory to a list or Q to exit");
     }
     
+    public static void displayInventory(ArrayList<Item> inventory) {
+        for (int index = 0; index <inventory.size(); index++) {
+            if (inventory == null) {
+                break;
+            }
+            else {
+                String name = inventory.get(index).getName();
+                int quantity = inventory.get(index).getQuantity();
+                System.out.println(name +" x" + quantity );
+            }    
+        }
+}
     
     @Override
     public boolean doAction(String value) {
@@ -42,13 +57,25 @@ public class InventoryView extends View {
                 else
                 this.console.println("$" + icontrol.totalCost(inventory) + "0");
                 break;
+            }
+            case "2":
+            {
+                this.console.println("Enter desired file path:");
+                String filePath = this.getInput();
+                ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory();
+            try {
+                InventoryControl.writeInventory(inventory, filePath);
+            } catch (InventoryControlException ex) {
+                ErrorView.display(this.getClass().getName(),"Failed to Save");
+            }
+                break;
             }    
             default:
                 ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
         }
         
-        return false;
+        return true;
     }
     
 }

@@ -5,45 +5,62 @@
  */
 package byui.cit260.ransomhacker.view;
 
-import java.util.Scanner;
+import byui.cit260.ransomhacker.control.GameControl;
+import java.io.FileWriter;
+import java.io.IOException;
+import ransomhacker.RansomHacker;
 
 /**
  *
- * @author Hansen
- * 
- * The end user is prompted to enter the file location where the game will be saved.
- * If a valid file location is specified, save the the player, profile, inventory items, progress data to a file.
- * Display a message saying that the game was saved successfully and then return back to the Main Menu.
- * An error message will be displayed if the end user enters an invalid file location and the end user prompted again to enter a valid file location.
+ * @author Hansen Muhile
  */
-
- 
-public class SaveGameView extends View {
+public class SaveGameView extends View{
     
-    
-    public SaveGameView (){
-        super("\nEnter file location to save the game?");
-        
+    public SaveGameView() {
+        super("\nDo you want to save game?"
+                +"\n----------------------"
+                + "\nY - Yes"
+                + "\nN - No");
     }
+  
 
     @Override
+
     public boolean doAction(String input) {
             if (input.length() < 2) {
             ErrorView.display(this.getClass().getName(),"\nInvalid file location: "
                 + "The location must be greater than one character in length");
             return false;
         }
-     
-        this.displayBanner();
-        return true;
-    }
-       
-    private void displayBanner() {
-        this.console.println("\n|||||||             |||||||||"
+            
+            input = input.toUpperCase();
+     switch (input) {
+            case "Y":
+               System.out.println("\n|||||||             |||||||||"
                           +"\n|||                       |||"
                           +"\n|||      Game Saved       |||"
                           +"\n|||                       |||"
                           +"\n|||||||             |||||||||");
+                break;
+            case "N":
+                System.out.println("\n|||||||             |||||||||"
+                          +"\n|||                       |||"
+                          +"\n|||      Game Not Saved   |||"
+                          +"\n|||                       |||"
+                          +"\n|||||||             |||||||||");
+                break;
+            default:
+                System.out.println("\nInvalid Selection");
+                break;
+        }
+
+        
+        return true;
     }
+       
+    
+
+    
+    
     
 }
