@@ -52,7 +52,7 @@ public class MainMenuView extends View {
             case "4":
                 this.printReport();
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
    
         }
@@ -73,23 +73,23 @@ public class MainMenuView extends View {
     }
 
     private void openGame() {
-        System.out.println("Enter location of save file:");
+        this.console.println("Enter location of save file:");
         String filePath = this.getInput();
         
         try {
          GameControl.loadGame(filePath);
-         
-         
-        }
-        catch(Exception ex) {
-            System.out.println("Game Not Loaded");
-        }
-     
-        System.out.println("\n|||||||             |||||||||"
+         this.console.println("\n|||||||             |||||||||"
                           +"\n|||                       |||"
                           +"\n|||      Game Loaded      |||"
                           +"\n|||                       |||"
                           +"\n|||||||             |||||||||");
+         
+        }
+        catch(Exception ex) {
+            ErrorView.display(this.getClass().getName(),"Game Not Loaded");
+        }
+     
+        
     }
 
     private void displayHelpMenu() {

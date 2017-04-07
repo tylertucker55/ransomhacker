@@ -6,6 +6,7 @@
 package byui.cit260.ransomhacker.view;
 
 import byui.cit260.ransomhacker.control.GameControl;
+import byui.cit260.ransomhacker.exceptions.GameControlException;
 import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.model.Scene;
 import ransomhacker.RansomHacker;
@@ -62,13 +63,13 @@ public class GameMenuView extends View {
                 this.displayHelpMenu();
                 break;
             default:
-                System.out.println("\nInvalid Selection");
+                ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
             
         }
         }
         catch (NumberFormatException nf) {
-            System.out.println("This value must be a number. Press Q to quit.");
+            ErrorView.display(this.getClass().getName(),"This value must be a number. Press Q to quit.");
         }
         
         this.displayMessage = this.getMenu();
@@ -135,8 +136,8 @@ public class GameMenuView extends View {
     }
     
     private void displayMap() {
-        System.out.println("   1   2   3   4   5   6   7   8   9");
-        System.out.println("1 "  + Scene.Seattle.getSymbol()
+        this.console.println("   1   2   3   4   5   6   7   8   9");
+        this.console.println("1 "  + Scene.Seattle.getSymbol()
                                  + Scene.Spokane.getSymbol()
                                  + Scene.Helena.getSymbol()
                                  + Scene.Bismark.getSymbol()

@@ -106,6 +106,7 @@ public class GameControl {
     
     public static void saveGame(Game game, String filePath)
             throws GameControlException {
+
         try( FileOutputStream fops = new FileOutputStream(filePath)) {
             ObjectOutputStream output = new ObjectOutputStream(fops);
             
@@ -113,7 +114,7 @@ public class GameControl {
             
         }
         catch(Exception e) {
-            throw new GameControlException(e.getMessage());
+            throw new GameControlException(e.getMessage(), e.getCause());
         }
         
     }

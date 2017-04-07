@@ -66,7 +66,7 @@ public class StartProgramView extends View{
     public boolean doAction(String name) {
         
         if (name.length() < 2) {
-            System.out.println("\nInvalid player name: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid player name: "
                 + "The name must be greater than one character in length");
             return false;
         }
@@ -74,7 +74,7 @@ public class StartProgramView extends View{
         Player player = GameControl.createPlayer(name);
         
         if (player == null) {
-            System.out.println("\nError creating the player.");
+            ErrorView.display(this.getClass().getName(),"\nError creating the player.");
             return false;
         }
         this.displayNextView(player);
@@ -83,7 +83,7 @@ public class StartProgramView extends View{
 
     private void displayNextView(Player player) {
          
-        System.out.println("Good Luck " + player.getName());
+        this.console.println("Good Luck " + player.getName());
         
     MainMenuView mainMenuView = new MainMenuView();
     

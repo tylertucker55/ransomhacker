@@ -5,9 +5,15 @@
  */
 package byui.cit260.ransomhacker.control;
 
+import byui.cit260.ransomhacker.exceptions.GameControlException;
+import byui.cit260.ransomhacker.exceptions.InventoryControlException;
+import byui.cit260.ransomhacker.model.Game;
 import byui.cit260.ransomhacker.model.Item;
 import java.util.ArrayList;
 import ransomhacker.RansomHacker;
+import byui.cit260.ransomhacker.view.View;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
 
 /**
  *
@@ -15,20 +21,6 @@ import ransomhacker.RansomHacker;
  */
 public class InventoryControl {
 
-    public static void displayInventory(ArrayList<Item> inventory) {
-        for (int index = 0; index <inventory.size(); index++) {
-            if (inventory == null) {
-                break;
-            }
-            else {
-                String name = inventory.get(index).getName();
-                int quantity = inventory.get(index).getQuantity();
-                System.out.println(name +" x" + quantity );
-            }
-            }
-            
-
-    }
 
     public double totalCost(ArrayList<Item> inventory) {
 
@@ -41,6 +33,23 @@ public class InventoryControl {
         }
 
         return total;
+    }
+    
+    public static void writeInventory(ArrayList<Item> inventory, String filePath)
+            throws InventoryControlException {
+
+        try( FileOutputStream fops = new FileOutputStream(filePath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            for (int index = 0; index < inventory.size(); index++) {
+                output.writeObject(inventory.get(index).getName()); //Not writing a file?
+            }
+            
+            
+        }
+        catch(Exception e) {
+            throw new InventoryControlException(e.getMessage(), e.getCause());
+        }
+        
     }
 
     public void addItemtoInventory() {

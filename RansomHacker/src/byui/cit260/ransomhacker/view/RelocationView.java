@@ -47,7 +47,7 @@ public class RelocationView extends View {
     public boolean doAction(String cityName) {
                
         if (cityName.length() < 2) {
-            System.out.println("\nInvalid city name: "
+            ErrorView.display(this.getClass().getName(),"\nInvalid city name: "
                 + "The name must be the same as the city on the list");
             return false;
             }    
@@ -60,7 +60,7 @@ public class RelocationView extends View {
             try {
                 RelocationControl.calcMoveCost(character, cityLocation);
             } catch (RelocationControlException ex) {
-                System.out.println(ex.getMessage());
+                ErrorView.display(this.getClass().getName(),ex.getMessage());
             }
             
             
