@@ -57,7 +57,7 @@ public class MainMenuView extends View {
    
         }
         
-        return false;
+        return true;
     }
 
     private void newGame() {
@@ -83,6 +83,8 @@ public class MainMenuView extends View {
                           +"\n|||      Game Loaded      |||"
                           +"\n|||                       |||"
                           +"\n|||||||             |||||||||");
+         GameMenuView gameMenu = new GameMenuView();
+         gameMenu.display();
          
         }
         catch(Exception ex) {

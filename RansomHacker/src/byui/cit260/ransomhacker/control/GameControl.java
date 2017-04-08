@@ -98,6 +98,8 @@ public class GameControl {
             
             
             game = (Game)input.readObject();
+            RansomHacker.setCurrentGame(game);
+            
         }
         catch(Exception e) {
             throw new GameControlException(e.getMessage());
