@@ -57,7 +57,7 @@ public class MainMenuView extends View {
    
         }
         
-        return true;
+        return false;
     }
 
     private void newGame() {
