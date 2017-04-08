@@ -10,9 +10,11 @@ import byui.cit260.ransomhacker.model.Player;
 import byui.cit260.ransomhacker.view.SaveGameView;
 import byui.cit260.ransomhacker.view.StartProgramView;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -76,14 +78,13 @@ public class RansomHacker {
             
             String filePath = "log.txt";
             RansomHacker.logFile = new PrintWriter(filePath);
-                        
             StartProgramView startProgramView = new StartProgramView();
             startProgramView.display();
             
         } catch (Throwable te) {
-            System.out.println("Exception: " + te.toString()
-                    + "\nCause: " + te.getCause()
-                    + "\nMessage:" +te.getMessage());
+            System.out.println( "Exception: " + te.toString() +
+                                "\nCause: " + te.getCause() +
+                                "\nMessage: " +te.getMessage());
             te.printStackTrace();
             
         }
@@ -105,6 +106,7 @@ public class RansomHacker {
             }
             
         }
+        
     }
     
      public static Game getCurrentGame() {

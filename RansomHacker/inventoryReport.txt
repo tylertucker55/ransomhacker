@@ -1,0 +1,8 @@
+
+
+         Inventory Report          
+
+Name                          Price     Description                                       
+-----------                   -----     -------------------                               
+Computer                      500.00    A basic computer, can be used to launch basic attacks
+Hacking Software: Beginner    50.00     A free suite of hacking Tools for basic attacks   

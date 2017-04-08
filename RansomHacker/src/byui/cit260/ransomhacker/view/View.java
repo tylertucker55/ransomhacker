@@ -53,8 +53,9 @@ public abstract class View implements ViewInterface {
         
         String value = "";
         boolean valid = false;
-
         while (!valid) {
+
+
             this.console.println("\n" + this.displayMessage);
 
             try {
@@ -62,6 +63,7 @@ public abstract class View implements ViewInterface {
             } catch (IOException ex) {
                 ErrorView.display(this.getClass().getName(),"Error getting Input");
             }
+
             value = value.trim();
 
             if (value.length() == 0) {

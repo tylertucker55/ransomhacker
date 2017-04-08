@@ -22,9 +22,9 @@ import java.util.logging.Logger;
  */
 public class InventoryView extends View {
 
-    public InventoryView (Player player, Character character){
+    public InventoryView (Player player, Character character) {
         super("\n" + player.getName() + "'s Inventory:");
-        
+         
         ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory(); //why does this display before the line before?
         this.displayInventory(inventory);
         
@@ -59,23 +59,13 @@ public class InventoryView extends View {
                 break;
             }
             case "2":
-            {
-                this.console.println("Enter desired file path:");
-                String filePath = this.getInput();
-                ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory();
-            try {
-                InventoryControl.writeInventory(inventory, filePath);
-            } catch (InventoryControlException ex) {
-                ErrorView.display(this.getClass().getName(),"Failed to Save");
-            }
-                break;
-            }    
+            
             default:
                 ErrorView.display(this.getClass().getName(),"\nInvalid Selection");
                 break;
         }
         
-        return false;
+        return true;
     }
     
 }
