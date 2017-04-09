@@ -37,12 +37,7 @@ public class InventoryControl {
         return total;
     }
     
-    
-      
 
-    public void addItemtoInventory() {
-        
-    }
     
     
 }

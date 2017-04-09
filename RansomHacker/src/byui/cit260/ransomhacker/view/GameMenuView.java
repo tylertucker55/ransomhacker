@@ -77,9 +77,17 @@ public class GameMenuView extends View {
         return false;
     }      
 
-    private void displayCharStats() {
-        CharacterStatsView statsMenu = new CharacterStatsView();
-        statsMenu.display();
+    private void displayCharStats() {        
+        this.console.println("\n"
+                    + "\n----------------------------"
+                    + "\n|       Character stats    |"
+                    + "\n----------------------------"
+                    + "\nHacking: " + RansomHacker.getCurrentGame().getCharacter().getHackingLevel()
+                    + "\nSocialEngineering: " + RansomHacker.getCurrentGame().getCharacter().getSocialLevel()
+                    + "\nStealth: " + RansomHacker.getCurrentGame().getCharacter().getStealthLevel()
+                    + "\nPrecision: " + RansomHacker.getCurrentGame().getCharacter().getPrecisionLevel()
+                    + "\nSpeed: " + RansomHacker.getCurrentGame().getCharacter().getSpeedLevel()
+                    + "\n----------------------------");
     }
 
     private void displayJobs() {
@@ -98,8 +106,8 @@ public class GameMenuView extends View {
     }
 
     private void displayStore() {
-        StoreView gameMenu = new StoreView();
-        gameMenu.display();
+        StoreView storeView = new StoreView();
+        storeView.display();
     }
 
     private void displayRelocation() {

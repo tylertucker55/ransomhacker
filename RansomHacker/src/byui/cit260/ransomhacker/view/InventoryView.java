@@ -23,24 +23,19 @@ import java.util.logging.Logger;
 public class InventoryView extends View {
 
     public InventoryView (Player player, Character character) {
-        super("\n" + player.getName() + "'s Inventory:");
+        this.console.println("\n" + player.getName() + "'s Inventory:");
          
         ArrayList<Item> inventory = RansomHacker.getCurrentGame().getCharacter().getInventory(); //why does this display before the line before?
-        this.displayInventory(inventory);
+        InventoryView.displayInventory(inventory);
         
-        this.console.println("Press 1 to calculate total value of your inventory, 2 to print your inventory to a list or Q to exit");
+        this.console.println("Press 1 to calculate total value of your inventory");
     }
     
     public static void displayInventory(ArrayList<Item> inventory) {
         for (int index = 0; index <inventory.size(); index++) {
-            if (inventory == null) {
-                break;
-            }
-            else {
                 String name = inventory.get(index).getName();
                 int quantity = inventory.get(index).getQuantity();
-                System.out.println(name +" x" + quantity );
-            }    
+                System.out.println(name +" x" + quantity );   
         }
 }
     

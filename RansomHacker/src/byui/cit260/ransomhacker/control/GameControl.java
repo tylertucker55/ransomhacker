@@ -155,7 +155,7 @@ public class GameControl {
         supercomputer.setName("Super Computer");
         supercomputer.setDescription("An ultra fast computer whose processing "
                 + "capabilites make it ideal for cracking hashes"
-                + "/n +1 Speed");
+                + "(+1 Speed)");
         supercomputer.setCost(5000);
         supercomputer.setOwned(false);
         supercomputer.setQuantity(0);
@@ -167,7 +167,7 @@ public class GameControl {
         botnet.setDescription("A network of 1000 compromised computers used in "
                 + "carrying out DDoS attacks, also allows you to launch attacks "
                 + "from comprimised computers, increasing your stealth"
-                + "/n +1 Stealth");
+                + "(+1 Stealth)");
         botnet.setStealthLevel(1);
         botnet.setCost(5000);
         botnet.setOwned(false);
@@ -178,7 +178,7 @@ public class GameControl {
         vpnservice.setName("VPN Services");
         vpnservice.setDescription("A VPN Service that allows you to change your "
                 + "IP, increasing your stealth"
-                + "/n+1 Stealth");
+                + "(+1 Stealth)");
         vpnservice.setCost(200);
         vpnservice.setQuantity(0);
         vpnservice.setOwned(false);
@@ -188,7 +188,7 @@ public class GameControl {
         Item proxynetwork = new Item();
         proxynetwork.setName("Proxy Network");
         proxynetwork.setDescription("A network of proxy servers that further anonymize your location"
-                + "/n+2 Stealth");
+                + "(+2 Stealth)");
         proxynetwork.setCost(1000);
         proxynetwork.setQuantity(0);
         proxynetwork.setOwned(false);
@@ -252,7 +252,7 @@ public class GameControl {
     }
     
     public static Job[] createJobsList() {
-       Job[] joblist = new Job[8];
+       Job[] jobList = new Job[8];
         
        Job wifiPasswords = new Job();
        wifiPasswords.setName("Steal Wifi-Passwords");
@@ -294,7 +294,7 @@ public class GameControl {
        robExchange.setDescription("Hack into and steal funds from an exchange");
        robExchange.setPay(500000);
        
-       return joblist;
+       return jobList;
     }
     
     public enum Jobs {

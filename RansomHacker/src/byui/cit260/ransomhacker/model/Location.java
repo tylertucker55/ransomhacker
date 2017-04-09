@@ -5,6 +5,7 @@
  */
 package byui.cit260.ransomhacker.model;
 
+import byui.cit260.ransomhacker.control.GameControl.Jobs;
 import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
@@ -23,9 +24,29 @@ public class Location implements Serializable {
     private Scene scene;
     private Character character;
     private Item[] items;
+    private Job[] jobs;
+    private SkillDevelopment[] courses;
     
     public Location() {};
 
+    public Job[] getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(Job[] jobs) {
+        this.jobs = jobs;
+    }
+
+    public SkillDevelopment[] getCourses() {
+        return courses;
+    }
+
+    public void setCourses(SkillDevelopment[] courses) {
+        this.courses = courses;
+    }
+
+    
+    
     public Item[] getItems() {
         return items;
     }

@@ -5,7 +5,10 @@
  */
 package byui.cit260.ransomhacker.control;
 
+import byui.cit260.ransomhacker.control.GameControl.Courses;
 import byui.cit260.ransomhacker.control.GameControl.Items;
+import byui.cit260.ransomhacker.control.GameControl.Jobs;
+import static byui.cit260.ransomhacker.control.ViewMapControl.locations;
 import byui.cit260.ransomhacker.model.Item;
 import byui.cit260.ransomhacker.model.Job;
 import byui.cit260.ransomhacker.model.Location;
@@ -36,8 +39,7 @@ public class ViewMapControl {
         Location[][] locations = map.getLocations();
 
         locations[0][0].setScene(Scene.Seattle);
-        Item[] smallCites = new Item[2];
-        smallCites[0] = RansomHacker.getCurrentGame().getItems()[Items.computer.ordinal()];
+        //smallCites[0] = RansomHacker.getCurrentGame().getItems()[Items.computer.ordinal()];
         //locations[0][0].setItems(smallCities[]);
         locations[1][0].setScene(Scene.Portland);
         locations[2][0].setScene(Scene.Oakland);
@@ -100,35 +102,140 @@ public class ViewMapControl {
         Item[] itemList = RansomHacker.getCurrentGame().getItems();
         Item[] smallCityItems = {
             itemList[Items.computer.ordinal()],
-            itemList[Items.emailserver.ordinal()]};
-        Item[] mediumCityItems = {};
-        Item[] largeCityItems = {};
-        Item[] hugeCityItems = {};
-        Item[] massiveCityItems = {};
+            itemList[Items.emailserver.ordinal()],
+            itemList[Items.wificard.ordinal()],
+            itemList[Items.intermediatehackingsoftware.ordinal()]};
+        Item[] mediumCityItems = {
+            itemList[Items.computer.ordinal()],
+            itemList[Items.emailserver.ordinal()],
+            itemList[Items.wificard.ordinal()],
+            itemList[Items.intermediatehackingsoftware.ordinal()],
+            itemList[Items.supercomputer.ordinal()]};
+        Item[] largeCityItems = {
+            itemList[Items.computer.ordinal()],
+            itemList[Items.emailserver.ordinal()],
+            itemList[Items.wificard.ordinal()],
+            itemList[Items.intermediatehackingsoftware.ordinal()],
+            itemList[Items.supercomputer.ordinal()],
+            itemList[Items.advancedhackingsoftware.ordinal()],
+            itemList[Items.botnet.ordinal()],
+            itemList[Items.vpnservice.ordinal()]};
+        Item[] hugeCityItems = {
+            itemList[Items.computer.ordinal()],
+            itemList[Items.emailserver.ordinal()],
+            itemList[Items.wificard.ordinal()],
+            itemList[Items.intermediatehackingsoftware.ordinal()],
+            itemList[Items.supercomputer.ordinal()],
+            itemList[Items.advancedhackingsoftware.ordinal()],
+            itemList[Items.botnet.ordinal()],
+            itemList[Items.vpnservice.ordinal()],
+            itemList[Items.proxynetwork.ordinal()]};
+        Item[] massiveCityItems = {
+            itemList[Items.computer.ordinal()],
+            itemList[Items.emailserver.ordinal()],
+            itemList[Items.wificard.ordinal()],
+            itemList[Items.intermediatehackingsoftware.ordinal()],
+            itemList[Items.supercomputer.ordinal()],
+            itemList[Items.advancedhackingsoftware.ordinal()],
+            itemList[Items.botnet.ordinal()],
+            itemList[Items.vpnservice.ordinal()],
+            itemList[Items.proxynetwork.ordinal()],
+            itemList[Items.experthackingsoftware.ordinal()],
+            itemList[Items.zerodayattacks.ordinal()]};
         
         //create Job Lists
         Job[] jobList = RansomHacker.getCurrentGame().getJobs();
-        Job[] smallCityJobs = {};
-        Job[] mediumCityJobs = {};
-        Job[] largeCityJobs = {};
-        Job[] hugeCityJobs = {};
-        Job[] massiveCityJobs = {};
+        Job[] smallCityJobs = {
+            jobList[Jobs.wifiPasswords.ordinal()],
+            jobList[Jobs.stealCreditCards.ordinal()]};
+        Job[] mediumCityJobs = {
+            jobList[Jobs.wifiPasswords.ordinal()],
+            jobList[Jobs.stealCreditCards.ordinal()],
+            jobList[Jobs.setUpScam.ordinal()],
+            jobList[Jobs.stealPasswords.ordinal()]};
+        Job[] largeCityJobs = {
+            jobList[Jobs.wifiPasswords.ordinal()],
+            jobList[Jobs.stealCreditCards.ordinal()],
+            jobList[Jobs.setUpScam.ordinal()],
+            jobList[Jobs.stealPasswords.ordinal()],
+            jobList[Jobs.sabotageDatabase.ordinal()],
+            jobList[Jobs.stealIntel.ordinal()]};
+        Job[] hugeCityJobs = {
+            jobList[Jobs.wifiPasswords.ordinal()],
+            jobList[Jobs.stealCreditCards.ordinal()],
+            jobList[Jobs.setUpScam.ordinal()],
+            jobList[Jobs.stealPasswords.ordinal()],
+            jobList[Jobs.sabotageDatabase.ordinal()],
+            jobList[Jobs.stealIntel.ordinal()],
+            jobList[Jobs.crashBank.ordinal()]};
+        Job[] massiveCityJobs = {
+            jobList[Jobs.wifiPasswords.ordinal()],
+            jobList[Jobs.stealCreditCards.ordinal()],
+            jobList[Jobs.setUpScam.ordinal()],
+            jobList[Jobs.stealPasswords.ordinal()],
+            jobList[Jobs.sabotageDatabase.ordinal()],
+            jobList[Jobs.stealIntel.ordinal()],
+            jobList[Jobs.crashBank.ordinal()],
+            jobList[Jobs.robExchange.ordinal()]};
         
         //create Skill Development Classes
         SkillDevelopment[] skillsList = RansomHacker.getCurrentGame().getSkills();
-        SkillDevelopment[] smallCitySkills = {};
-        SkillDevelopment[] mediumCitySkills = {};
-        SkillDevelopment[] largeCitySkills = {};
-        SkillDevelopment[] hugeCitySkills = {};
-        SkillDevelopment[] massiveCitySkills = {};
+        SkillDevelopment[] smallCitySkills = {
+            skillsList[Courses.selfStudy.ordinal()],
+            skillsList[Courses.pyschologyClass.ordinal()],
+            skillsList[Courses.hackerBootCamp.ordinal()]};
+        SkillDevelopment[] mediumCitySkills = {
+            skillsList[Courses.selfStudy.ordinal()],
+            skillsList[Courses.pyschologyClass.ordinal()],
+            skillsList[Courses.hackerBootCamp.ordinal()]};
+        SkillDevelopment[] largeCitySkills = {
+            skillsList[Courses.selfStudy.ordinal()],
+            skillsList[Courses.pyschologyClass.ordinal()],
+            skillsList[Courses.hackerBootCamp.ordinal()]};
+        SkillDevelopment[] hugeCitySkills = {
+            skillsList[Courses.selfStudy.ordinal()],
+            skillsList[Courses.pyschologyClass.ordinal()],
+            skillsList[Courses.hackerBootCamp.ordinal()]};
+        SkillDevelopment[] massiveCitySkills = {
+            skillsList[Courses.selfStudy.ordinal()],
+            skillsList[Courses.pyschologyClass.ordinal()],
+            skillsList[Courses.hackerBootCamp.ordinal()]};
        
-       
+       //Set Store Items, Job Lists, Course List to each location based on size
         for (int row = 0; row < locations.length; row++) {
             for (int col = 0; col < locations[row].length; col++) {
                 // get size of city in scene in location
-                //switch(citySize) {
-                // case smallCity:  location[row][].setItems(smallCityItemList);
-                
+                int citySize = locations[row][col].getSize();
+                switch (citySize) {
+                    case 1:  
+                        locations[row][col].setItems(smallCityItems);
+                        locations[row][col].setJobs(smallCityJobs);
+                        locations[row][col].setCourses(smallCitySkills);
+                        break;
+                    case 2:
+                        locations[row][col].setItems(mediumCityItems);
+                        locations[row][col].setJobs(mediumCityJobs);
+                        locations[row][col].setCourses(mediumCitySkills);
+                        break;
+                    case 3:
+                        locations[row][col].setItems(largeCityItems);
+                        locations[row][col].setJobs(largeCityJobs);
+                        locations[row][col].setCourses(largeCitySkills);
+                        break;
+                    case 4:
+                        locations[row][col].setItems(hugeCityItems);
+                        locations[row][col].setJobs(hugeCityJobs);
+                        locations[row][col].setCourses(hugeCitySkills);
+                        break;
+                    case 5:
+                        locations[row][col].setItems(massiveCityItems);
+                        locations[row][col].setJobs(massiveCityJobs);
+                        locations[row][col].setCourses(massiveCitySkills);
+                        break;
+                    default:
+                        System.out.println("City Size invalid");
+                        break;
+                }
                 
                 
             }
@@ -139,3 +246,4 @@ public class ViewMapControl {
         
     }
 }
+
